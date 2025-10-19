@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   FaUsers,
   FaBullhorn,
@@ -9,98 +9,145 @@ import {
 } from "react-icons/fa";
 
 export default function HowWeWork() {
+  const sectionRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+  const [activeStep, setActiveStep] = useState(0);
+  const [prevStep, setPrevStep] = useState(null);
+  const [iconVisible, setIconVisible] = useState(Array(6).fill(false));
+  const [isPaused, setIsPaused] = useState(false);
+
+  // Scroll fade-up animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.15 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   const steps = [
     {
       id: 1,
-      icon: <FaUsers size={22} />,
-      title: "Discovery & Onboarding",
-      desc: "We collaborate with you to understand your audience, product, and goals — setting the foundation for success.",
+      icon: <FaUsers size={24} />,
+      title: "Discovery & Targeting",
+      desc: "We define your ideal client profile and uncover where they actually spend time.",
     },
     {
       id: 2,
-      icon: <FaBullhorn size={22} />,
-      title: "Campaign Strategy",
-      desc: "We design a personalized outreach roadmap using modern channels and messaging frameworks that resonate.",
+      icon: <FaBullhorn size={24} />,
+      title: "Value-First Strategy",
+      desc: "Together, we craft messaging that earns attention instead of demanding it.",
     },
     {
       id: 3,
-      icon: <FaCogs size={22} />,
-      title: "Setup & Preparation",
-      desc: "From verified lead lists to technical setup, everything is configured to ensure seamless performance.",
+      icon: <FaCogs size={24} />,
+      title: "Setup & Launch",
+      desc: "From domain warm-up to data verification and inbox management — we handle the technical setup.",
     },
     {
       id: 4,
-      icon: <FaChartLine size={22} />,
-      title: "Launch & Optimization",
-      desc: "We monitor every detail, analyzing metrics to refine campaigns for maximum conversions.",
+      icon: <FaChartLine size={24} />,
+      title: "Meetings on Your Calendar",
+      desc: "Calls are booked directly on your calendar — all you do is show up and close.",
     },
     {
       id: 5,
-      icon: <FaEnvelopeOpenText size={22} />,
-      title: "Leads & Reporting",
-      desc: "Transparent reporting and real-time access to results — so you’re always in control.",
+      icon: <FaEnvelopeOpenText size={24} />,
+      title: "Conversion Coaching",
+      desc: "We help refine your scripts and follow-ups so meetings consistently turn into clients.",
     },
     {
       id: 6,
-      icon: <FaHandshake size={22} />,
-      title: "Campaign Adjustments",
-      desc: "We run monthly reviews and improvements to keep campaigns fresh and ROI-driven.",
+      icon: <FaHandshake size={24} />,
+      title: "Scale & Optimize",
+      desc: "Continuous testing, cleanup, and message refreshes to increase ROI as we scale.",
     },
   ];
 
-  const [activeStep, setActiveStep] = useState(0);
-  const [fade, setFade] = useState(true);
-  const [iconVisible, setIconVisible] = useState(Array(steps.length).fill(false));
-
-  const changeStep = (index) => {
-    setFade(false);
-    setTimeout(() => {
-      setActiveStep(index);
-      setFade(true);
-    }, 250);
-  };
-
+  // Sequential reveal for icons
   useEffect(() => {
     steps.forEach((_, i) => {
       setTimeout(() => {
         setIconVisible((prev) => {
-          const newState = [...prev];
-          newState[i] = true;
-          return newState;
+          const copy = [...prev];
+          copy[i] = true;
+          return copy;
         });
       }, i * 120);
     });
   }, []);
 
+  // Cross-fade transition between steps
+  const changeStep = (nextStep) => {
+    setPrevStep(activeStep);
+    setActiveStep(nextStep);
+  };
+
+  // Auto-step rotation (pause on manual interaction)
+  useEffect(() => {
+    if (isPaused) return;
+    const timer = setInterval(() => {
+      setPrevStep(activeStep);
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [activeStep, isPaused, steps.length]);
+
+  const handleIconClick = (index) => {
+    setIsPaused(true);
+    changeStep(index);
+    setTimeout(() => setIsPaused(false), 1000); // resume after 2s
+  };
+
   return (
-    <section className="py-28 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative">
+    <section
+      ref={sectionRef}
+      className={`py-28 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative transition-all duration-700 ease-out ${
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
       <div className="max-w-6xl mx-auto text-center px-6">
         {/* Header */}
         <h2 className="text-5xl font-bold text-sky-700 mb-4">
           How We <span className="text-sky-500">Work</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
-          A transparent and collaborative approach to driving measurable growth — from onboarding to optimization.
+          A clear, structured process that turns cold outreach into predictable, qualified meetings.
         </p>
 
-        {/* Step Card */}
-        <div
-          className={`relative mx-auto bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-14 mb-14 transition-all duration-500 transform max-w-2xl md:max-w-3xl min-h-[320px] flex flex-col justify-center ${
-            fade ? "opacity-100 scale-100" : "opacity-0 scale-95"
-          }`}
-        >
-          <div className="flex justify-center mb-5 text-sky-600 transition-all duration-300">
-            {steps[activeStep].icon}
-          </div>
-          <p className="font-semibold text-gray-500 mb-1 text-base">
-            STEP {steps[activeStep].id}
-          </p>
-          <h3 className="text-3xl font-semibold text-gray-800 mb-3">
-            {steps[activeStep].title}
-          </h3>
-          <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
-            {steps[activeStep].desc}
-          </p>
+        {/* Step Card with Cross-Fade Layers */}
+        <div className="relative max-w-2xl md:max-w-3xl mx-auto mb-14 min-h-[340px]">
+          {steps.map((step, index) => (
+            <div
+              key={step.id}
+              className={`absolute inset-0 bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-12 flex flex-col justify-center transition-opacity duration-700 ease-in-out ${
+                index === activeStep
+                  ? "opacity-100 z-20"
+                  : index === prevStep
+                  ? "opacity-0 z-10"
+                  : "opacity-0 z-0"
+              }`}
+            >
+              <div className="flex justify-center mb-5 text-sky-600 transition-all duration-300">
+                {step.icon}
+              </div>
+              <p className="font-semibold text-gray-500 mb-1 text-base">
+                STEP {step.id}
+              </p>
+              <h3 className="text-3xl font-semibold text-gray-800 mb-3">
+                {step.title}
+              </h3>
+              <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
+                {step.desc}
+              </p>
+            </div>
+          ))}
         </div>
 
         {/* Icons Row */}
@@ -108,26 +155,23 @@ export default function HowWeWork() {
           {steps.map((step, index) => (
             <button
               key={step.id}
-              onClick={() => changeStep(index)}
+              onClick={() => handleIconClick(index)}
               className={`relative group w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] flex items-center justify-center rounded-full transition-all duration-400 ${
                 activeStep === index
                   ? "text-white scale-110"
                   : "bg-white border border-sky-100 text-sky-600 hover:shadow-md hover:scale-105"
-              } ${
-                iconVisible[index]
-                  ? "opacity-100 translate-y-0"
-                  : "opacity-0 translate-y-3"
-              }`}
+              } ${iconVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
               style={{
                 transitionDelay: `${index * 0.05}s`,
                 transitionProperty: "all",
                 transitionTimingFunction: "ease-in-out",
               }}
+              aria-label={`Step ${step.id}: ${step.title}`}
             >
               {activeStep === index && (
                 <>
-                  <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(14,165,233,0.2)_0%,rgba(20,184,166,0.6)_40%,rgba(6,182,212,0.8)_70%,rgba(14,165,233,0.2)_100%)] animate-rotate-glow blur-sm"></span>
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-500 to-sky-700 shadow-lg animate-hue-shift"></span>
+                  <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(14,165,233,0.12)_0%,rgba(20,184,166,0.28)_40%,rgba(6,182,212,0.36)_70%,rgba(14,165,233,0.12)_100%)] blur-sm animate-rotate-glow"></span>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-500 to-sky-700 shadow-lg opacity-30 animate-hue-shift"></span>
                 </>
               )}
               <span className="relative z-10">{step.icon}</span>
