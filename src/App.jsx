@@ -6,6 +6,9 @@ import WhyPlnitude from "./components/WhyPlnitude";
 import FAQSection from "./components/FAQSection";
 import HowWeWork from "./components/HowWeWork.jsx";
 import Testimonials from "./components/Testimonials";
+import CaseStudies from "./components/CaseStudies";
+import AboutSection from "./components/AboutSection";
+
 
 function App() {
   return (
@@ -16,7 +19,9 @@ function App() {
         <SliderSection />
         <WhyPlnitude />
         <HowWeWork />
+        <CaseStudies />
         <Testimonials />
+        <AboutSection />
         <FAQSection />
       </main>
       <Footer />

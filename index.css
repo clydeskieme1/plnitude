@@ -1,6 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "swiper/css";
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
+
 
 /* Custom animations */
 @keyframes scroll {
@@ -58,6 +62,21 @@
   100% {
     filter: hue-rotate(0deg);
   }
+}
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-slide-in {
+  animation: fadeSlideIn 0.9s ease-out forwards;
+  opacity: 0;
 }
 
 .animate-rotate-glow {

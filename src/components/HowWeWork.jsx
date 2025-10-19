@@ -60,7 +60,6 @@ export default function HowWeWork() {
     }, 250);
   };
 
-  // Sequential wave animation for icons
   useEffect(() => {
     steps.forEach((_, i) => {
       setTimeout(() => {
@@ -74,43 +73,43 @@ export default function HowWeWork() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative">
+    <section className="py-28 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative">
       <div className="max-w-6xl mx-auto text-center px-6">
         {/* Header */}
-        <h2 className="text-4xl font-bold text-sky-700 mb-3">
+        <h2 className="text-5xl font-bold text-sky-700 mb-4">
           How We <span className="text-sky-500">Work</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-14">
+        <p className="text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
           A transparent and collaborative approach to driving measurable growth — from onboarding to optimization.
         </p>
 
-        {/* Step Content */}
+        {/* Step Card */}
         <div
-          className={`relative max-w-xl mx-auto bg-white/70 backdrop-blur-md border border-sky-100 rounded-2xl shadow-lg p-10 mb-12 transition-all duration-500 transform ${
+          className={`relative mx-auto bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-14 mb-14 transition-all duration-500 transform max-w-2xl md:max-w-3xl min-h-[320px] flex flex-col justify-center ${
             fade ? "opacity-100 scale-100" : "opacity-0 scale-95"
           }`}
         >
-          <div className="flex justify-center mb-4 text-sky-600 transition-all duration-300">
+          <div className="flex justify-center mb-5 text-sky-600 transition-all duration-300">
             {steps[activeStep].icon}
           </div>
-          <p className="font-semibold text-gray-500 mb-1">
+          <p className="font-semibold text-gray-500 mb-1 text-base">
             STEP {steps[activeStep].id}
           </p>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-3">
+          <h3 className="text-3xl font-semibold text-gray-800 mb-3">
             {steps[activeStep].title}
           </h3>
-          <p className="text-gray-600 max-w-md mx-auto">
+          <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
             {steps[activeStep].desc}
           </p>
         </div>
 
-        {/* Icons Section */}
-        <div className="flex flex-wrap justify-center gap-6 mt-6 relative">
+        {/* Icons Row */}
+        <div className="flex justify-center items-center gap-4 sm:gap-6 md:gap-8 mt-10 flex-wrap sm:flex-nowrap">
           {steps.map((step, index) => (
             <button
               key={step.id}
               onClick={() => changeStep(index)}
-              className={`relative group w-14 h-14 flex items-center justify-center rounded-full transition-all duration-400 ${
+              className={`relative group w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] flex items-center justify-center rounded-full transition-all duration-400 ${
                 activeStep === index
                   ? "text-white scale-110"
                   : "bg-white border border-sky-100 text-sky-600 hover:shadow-md hover:scale-105"
@@ -125,7 +124,6 @@ export default function HowWeWork() {
                 transitionTimingFunction: "ease-in-out",
               }}
             >
-              {/* Active Icon Glow Wrapper */}
               {activeStep === index && (
                 <>
                   <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(14,165,233,0.2)_0%,rgba(20,184,166,0.6)_40%,rgba(6,182,212,0.8)_70%,rgba(14,165,233,0.2)_100%)] animate-rotate-glow blur-sm"></span>
@@ -137,8 +135,8 @@ export default function HowWeWork() {
           ))}
         </div>
 
-        {/* Decorative gradient bar */}
-        <div className="mt-14 h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 rounded-full"></div>
+        {/* Decorative Bar */}
+        <div className="mt-16 h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 rounded-full"></div>
       </div>
     </section>
   );

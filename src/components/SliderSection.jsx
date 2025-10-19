@@ -11,7 +11,7 @@ export default function SliderSection() {
   return (
     <section className="bg-white py-12">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">Trusted by results‑driven teams</h2>
+        <h2 className="text-center text-2xl font-bold text-gray-900 mb-6">Brands we’ve booked meetings with for our clients</h2>
 
         {/* Single row: continuous leftward scroll */}
         <div className="relative overflow-hidden">
