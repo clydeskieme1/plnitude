@@ -1,83 +1,56 @@
-import { useEffect, useState } from "react";
+import React from "react";
 
-const HeroSection = () => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => setIsVisible(true), 150);
-  }, []);
-
+export default function HeroSection() {
   return (
-    <section className="relative w-full bg-gradient-to-b from-white to-sky-50 py-20 overflow-hidden">
-      <div
-        className="
-          max-w-7xl mx-auto px-6 md:px-12 lg:px-20
-          flex flex-col-reverse md:flex-row 
-          items-center justify-between gap-16
-        "
-      >
-        {/* LEFT COLUMN - TEXT */}
-        <div
-          className={`flex-1 transition-all duration-1000 ease-out delay-200 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-          } text-center md:text-left`}
-        >
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900 mb-6">
-            Only Pay for Meetings <br />
-            <span className="text-sky-600">That Actually Happen.</span>
+    <section
+      id="hero"
+      className="relative bg-gradient-to-b from-sky-50 to-white overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between py-28 gap-12">
+        {/* LEFT: Text Content */}
+        <div className="w-full lg:w-1/2 text-center lg:text-left animate-fadeUp">
+          <h1 className="font-display text-5xl md:text-6xl font-bold text-sky-700 leading-tight mb-6">
+            Turn Cold Prospects <br />
+            <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">
+              Into Qualified Meetings
+            </span>
           </h1>
 
-          <p className="text-gray-600 text-lg mb-8 max-w-lg mx-auto md:mx-0">
-            We build predictable pipelines for agencies and B2B service companies — so you stop chasing leads and start closing deals. No retainers. No risk. Just qualified prospects showing up, ready to talk.
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-md mx-auto lg:mx-0">
+            We help B2B agencies and founders build scalable outbound systems
+            that deliver consistent, qualified meetings — without retainers,
+            without contracts, and without fluff.
           </p>
 
-          {/* Button */}
-          <div className="flex justify-center md:justify-start">
-            <button className="bg-sky-600 hover:bg-sky-700 text-white font-semibold px-8 py-4 rounded-full shadow-md transition-all">
-              Book Your Free Strategy Call
-            </button>
-          </div>
-
-          {/* Trust Indicators */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-6 mt-8 text-sm text-gray-500 font-medium">
-            <span>🚀 10–15 Qualified Meetings Monthly</span>
-            <span>⭐ 100% Pay-Per-Result Model</span>
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+            <a
+              href="#book-call"
+              className="relative inline-block text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md bg-gradient-to-r from-sky-600 via-sky-500 to-teal-400 hover:shadow-lg hover:scale-[1.03] animate-gradientFlow"
+            >
+              <span className="relative z-10">Book a Free Strategy Call</span>
+              {/* Subtle shimmer overlay */}
+              <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></span>
+            </a>
           </div>
         </div>
 
-        {/* RIGHT COLUMN - VIDEO */}
-        <div
-          className={`flex-1 flex justify-center md:justify-end transition-all duration-1000 ease-out delay-300 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          } relative`}
-        >
-          <div
-            className="
-              relative 
-              w-[90%] sm:w-[80%] md:w-[500px] lg:w-[560px]
-              aspect-video 
-              rounded-3xl overflow-hidden 
-              shadow-2xl border border-gray-100 bg-gray-300
-              mx-auto
-              hover:scale-[1.02] transition-transform duration-300
-            "
-          >
+        {/* RIGHT: Media (Video or Placeholder) */}
+        <div className="w-full lg:w-1/2 flex justify-center animate-fadeUp delay-200">
+          <div className="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-xl border border-sky-100 bg-black">
+            {/* 🖼️ Replace this with your actual video or hero visual */}
             <iframe
-              className="w-full h-full"
-              src="https://www.youtube.com/embed/VIDEO_ID_HERE?autoplay=0&rel=0"
-              title="Plnitude Demo Video"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              title="PLNITUDE Overview Video"
+              allow="autoplay; encrypted-media"
               allowFullScreen
+              className="absolute top-0 left-0 w-full h-full object-cover"
             ></iframe>
           </div>
-
-          {/* Glow effect */}
-          <div className="absolute right-[-80px] md:right-[-100px] top-1/2 -translate-y-1/2 w-[320px] md:w-[400px] h-[320px] md:h-[400px] bg-gradient-to-r from-cyan-300/25 to-sky-400/25 blur-3xl rounded-full z-[-1]" />
         </div>
       </div>
+
+      {/* Decorative gradient divider */}
+      <div className="h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 rounded-full mb-10"></div>
     </section>
   );
-};
-
-export default HeroSection;
+}
