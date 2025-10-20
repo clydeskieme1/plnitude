@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#55d8ff" />
+      <stop offset="1" stop-color="#25c2ff" />
+    </linearGradient>
+    <linearGradient id="g2" x1="1" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#8be3ff" />
+      <stop offset="1" stop-color="#55d8ff" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer stylized P -->
+  <path d="M120 400 L160 140 C165 110 185 95 210 95 H330 C370 95 395 115 395 150 V220 C395 255 370 275 330 275 H235"
+        fill="none" stroke="url(#g1)" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Mid outline for layered effect -->
+  <path d="M105 410 L145 150 C152 110 175 90 205 90 H325 C370 90 405 115 405 155 V230 C405 270 370 295 325 295 H230"
+        fill="none" stroke="url(#g2)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round" opacity="0.65" />
+
+  <!-- Inner square-ish cutout to echo badge style -->
+  <path d="M230 180 H325 V245 Q325 260 310 260 H235 Q220 260 220 245 V195 Q220 180 230 180 Z"
+        fill="none" stroke="#55d8ff" stroke-width="22" stroke-linejoin="round" stroke-linecap="round" />
+
+  <!-- Subtle shadow for depth -->
+  <path d="M120 400 L160 140 C165 110 185 95 210 95 H330" fill="none" stroke="#0e7490" stroke-width="6" opacity="0.15" />
+</svg>
