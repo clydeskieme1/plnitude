@@ -1,18 +1,21 @@
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import HeroSection from "./components/HeroSection";
-import SliderSection from "./components/SliderSection";
 import WhyPlnitude from "./components/WhyPlnitude";
-import FAQSection from "./components/FAQSection";
-import HowWeWork from "./components/HowWeWork.jsx";
+import HowWeWork from "./components/HowWeWork";
 import CaseStudies from "./components/CaseStudies";
 import AboutSection from "./components/AboutSection";
+import FAQSection from "./components/FAQSection";
 import CTABookCall from "./components/CTABookCall";
+import Footer from "./components/Footer";
+import AnimatedBackground from "./components/AnimatedBackground";
+import useFadeInOnScroll from "./hooks/useFadeInOnScroll";
+import SliderSection from "./components/SliderSection";
 
-
-function App() {
+export default function App() {
+  useFadeInOnScroll();
   return (
-    <div className="bg-white text-gray-800 font-sans overflow-x-hidden">
+    <div className="relative text-gray-800 font-sans overflow-x-hidden">
+      <AnimatedBackground />
       <Navbar />
       <main>
         <HeroSection />
@@ -28,5 +31,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

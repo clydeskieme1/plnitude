@@ -9,7 +9,7 @@ export default function AboutSection() {
       <div className="max-w-5xl mx-auto px-6 text-center fade-slide-in">
         {/* Section Header */}
         <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
-          Who’s Behind <span className="text-sky-500">Plnitude</span>
+          Who’s Behind <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Plnitude</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-14 text-lg">
           The story behind Plnitude — a performance-driven outbound agency built

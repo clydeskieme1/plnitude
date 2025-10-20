@@ -54,7 +54,10 @@ export default function WhyPlnitude() {
       }`}
     >
       <h2 className="text-4xl font-bold text-sky-600 mb-6">
-        Why Agencies Choose PLNITUDE
+        Why Agencies Choose{" "}
+        <span className="font-display bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">
+          PLNITUDE
+        </span>
       </h2>
       <p className="text-lg text-gray-700 mb-12 max-w-2xl mx-auto">
         We’re not another lead gen agency — we’re your growth partner on a

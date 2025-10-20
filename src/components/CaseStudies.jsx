@@ -12,6 +12,7 @@ const caseStudies = [
       "Helped a B2B marketing agency secure 25 meetings in the first 30 days of campaign launch.",
     youtubeId: "VIDEO_ID_1",
     thumbnail: "/assets/case1-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg", // 👈 Placeholder
   },
   {
     title: "$300k Pipeline in 6 Weeks",
@@ -20,6 +21,7 @@ const caseStudies = [
       "Built a $300k sales pipeline within 6 weeks by refining ICP targeting and multi-channel outreach.",
     youtubeId: "VIDEO_ID_2",
     thumbnail: "/assets/case2-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "Boosted Conversion Rates by 3x",
@@ -28,6 +30,7 @@ const caseStudies = [
       "Achieved a 3x boost in conversion rates through A/B tested outreach and optimized follow-ups.",
     youtubeId: "VIDEO_ID_3",
     thumbnail: "/assets/case3-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "40 Meetings Booked in 60 Days",
@@ -36,6 +39,7 @@ const caseStudies = [
       "Generated 40 booked meetings in under 60 days for an AI software development company through refined targeting and messaging.",
     youtubeId: "VIDEO_ID_4",
     thumbnail: "/assets/case4-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "$450k Pipeline in 90 Days",
@@ -44,6 +48,7 @@ const caseStudies = [
       "Created $450k in sales pipeline within 90 days through optimized outbound campaigns and strategic outreach.",
     youtubeId: "VIDEO_ID_5",
     thumbnail: "/assets/case5-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "30 Qualified Demos in 45 Days",
@@ -52,6 +57,7 @@ const caseStudies = [
       "Booked 30 qualified demos in 45 days using hyper-personalized messaging and improved lead segmentation.",
     youtubeId: "VIDEO_ID_6",
     thumbnail: "/assets/case6-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "20 Enterprise Meetings in 2 Months",
@@ -60,6 +66,7 @@ const caseStudies = [
       "Delivered 20 meetings with enterprise clients within 2 months of engagement start.",
     youtubeId: "VIDEO_ID_7",
     thumbnail: "/assets/case7-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
   {
     title: "10x ROI from Cold Outreach",
@@ -68,6 +75,7 @@ const caseStudies = [
       "Generated 10x ROI on outreach investment by improving personalization and timing of campaigns.",
     youtubeId: "VIDEO_ID_8",
     thumbnail: "/assets/case8-thumb.jpg",
+    clientImage: "/assets/client-placeholder.jpg",
   },
 ];
 
@@ -92,12 +100,18 @@ export default function CaseStudies() {
   };
 
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-900 relative overflow-hidden">
+    <section
+      id="case-studies"
+      className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-900 relative overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
           <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
-            Case <span className="text-sky-500">Studies</span>
+            Case{" "}
+            <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">
+              Studies
+            </span>
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
             Proven client outcomes powered by precision targeting and
@@ -185,13 +199,28 @@ export default function CaseStudies() {
               >
                 ✕
               </button>
-              <h3 className="text-3xl font-semibold mb-2 text-sky-700">
-                {selectedCase.title}
-              </h3>
-              <p className="text-sky-500 mb-3 font-medium">
-                Client: {selectedCase.client}
-              </p>
+
+              {/* Client Info */}
+              <div className="flex items-center gap-4 mb-6">
+                <img
+                  src={selectedCase.clientImage}
+                  alt={`${selectedCase.client} profile`}
+                  className="w-14 h-14 rounded-full object-cover shadow-md"
+                />
+                <div>
+                  <h3 className="text-2xl font-semibold text-gray-800 leading-snug">
+                    {selectedCase.title}
+                  </h3>
+                  <p className="text-sky-600 text-sm font-medium">
+                    Client: {selectedCase.client}
+                  </p>
+                </div>
+              </div>
+
+              {/* Description */}
               <p className="text-gray-700 mb-6">{selectedCase.result}</p>
+
+              {/* Video */}
               <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
                   src={`https://www.youtube.com/embed/${selectedCase.youtubeId}`}

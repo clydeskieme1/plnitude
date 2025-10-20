@@ -18,10 +18,9 @@ export default function CTABookCall() {
       <div className="max-w-6xl mx-auto px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           {/* LEFT: Text */}
-          <div className="lg:w-[48%] text-center lg:text-left animate-fade-up">
-            <h2 className="text-5xl font-bold text-sky-700 leading-tight mb-4">
-              Stop Guessing.{" "}
-              <span className="text-sky-500">Start Scaling Predictably.</span>
+          <div className="lg:w-[48%] text-center lg:text-left animate-fadeUp">
+            <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
+              Stop Guessing. <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Start Scaling Predictably.</span>
             </h2>
 
             <p className="text-lg md:text-xl text-gray-600 mb-6 max-w-md mx-auto lg:mx-0 leading-relaxed">
@@ -36,10 +35,10 @@ export default function CTABookCall() {
           </div>
 
           {/* RIGHT: Calendly Embed */}
-          <div className="lg:w-[48%] w-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden animate-fade-up [animation-delay:0.2s] flex justify-center">
+          <div className="lg:w-[48%] w-full bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden animate-fadeUp [animation-delay:0.2s] flex justify-center">
             <div
               className="calendly-inline-widget w-full max-w-[500px]"
-              data-url="https://calendly.com/plnitude/strategy-call"  // replace with actual Calendly link
+              data-url="https://calendly.com/plnitude/strategy-call"
               style={{ minWidth: "320px", height: "700px" }}
             ></div>
           </div>

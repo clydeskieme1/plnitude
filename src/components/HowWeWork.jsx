@@ -107,6 +107,7 @@ export default function HowWeWork() {
 
   return (
     <section
+      id="how-we-work"
       ref={sectionRef}
       className={`py-28 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative transition-all duration-700 ease-out ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -115,7 +116,7 @@ export default function HowWeWork() {
       <div className="max-w-6xl mx-auto text-center px-6">
         {/* Header */}
         <h2 className="text-5xl font-bold text-sky-700 mb-4">
-          How We <span className="text-sky-500">Work</span>
+          How We <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Work</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
           A clear, structured process that turns cold outreach into predictable, qualified meetings.

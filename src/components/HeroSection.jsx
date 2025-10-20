@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative bg-gradient-to-b from-sky-50 to-white overflow-hidden"
+      className="relative bg-transparent overflow-hidden"
     >
       <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between py-28 gap-12">
         {/* LEFT: Text Content */}
@@ -39,7 +39,7 @@ export default function HeroSection() {
           <div className="relative w-full max-w-lg aspect-video rounded-2xl overflow-hidden shadow-xl border border-sky-100 bg-black">
             {/* 🖼️ Replace this with your actual video or hero visual */}
             <iframe
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/watch?v=VFA4QRK9PP0&t=7s"
               title="PLNITUDE Overview Video"
               allow="autoplay; encrypted-media"
               allowFullScreen

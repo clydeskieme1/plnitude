@@ -46,7 +46,7 @@ export default function FAQSection() {
       <div className="max-w-5xl mx-auto px-6 text-center fade-slide-in">
         {/* Header */}
         <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
-          Everything You <span className="text-sky-500">Need to Know</span>
+          Everything You <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Need to Know</span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-14 text-lg">
           Straightforward answers about how our performance-based system works —
