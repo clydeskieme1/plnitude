@@ -4,6 +4,24 @@ import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import Ahmed_thumbnail from "../assets/Ahmed_thumbnail.jpg";
+import Ahmed from "../assets/Ahmed.jpg";
+import Alexey_thumbnail from "../assets/Alexey_thumbnail.jpg";
+import Alexey from "../assets/Alexey.jpg";
+import Arnav_thumbnail from "../assets/Arnav_thumbnail.jpg";
+import Arnav from "../assets/Arnav.jpg";
+import Daniel_thumbnail from "../assets/Daniel_thumbnail.png";
+import Daniel from "../assets/Daniel.jpg";
+import Cole_thumbnail from "../assets/Cole_thumbnail.jpg";
+import Cole from "../assets/Cole.jpg";
+import Eugene_thumbnail from "../assets/Eugene_thumbnail.jpg";
+import Eugene from "../assets/Eugene.jpg";
+import Taylor_thumbnail from "../assets/Taylor_thumbnail.jpg";
+import Taylor from "../assets/Taylor.jpg";
+import Nickolas_thumbnail from "../assets/Nickolas_thumbnail.jpg";
+import Nickolas from "../assets/Nickolas.jpg";
+
+
 const caseStudies = [
   {
     title: "6 Deals Closed in 2 Months",
@@ -11,8 +29,8 @@ const caseStudies = [
     result:
       "From 0 Calls Booked with Cold Email To Closing 6 E-commerce Email Marketing Clients Signed in 2 Months With Cold Email.",
     youtubeId: "sfvlrpkBF2o",
-    thumbnail: "src/assets/Ahmed_thumbnail.jpg",
-    clientImage: "src/assets/Ahmed.jpg", // 👈 Placeholder
+    thumbnail: Ahmed_thumbnail,
+    clientImage: Ahmed,
   },
   {
     title: "1 Call a Month to 97 Calls in 2 Months",
@@ -20,8 +38,8 @@ const caseStudies = [
     result:
       "From Booking 1 Meeting A Month To Booking 97 Meetings in 2 Months (Including a meeting with Vodafone).",
     youtubeId: "1R1zDHS3Wnc",
-    thumbnail: "src/assets/Daniel_thumbnail.png",
-    clientImage: "src/assets/Daniel.jpg",
+    thumbnail: Daniel_thumbnail,
+    clientImage: Daniel,
   },
   {
     title: "Networking & Referrals To Booking 63 Meetings",
@@ -29,8 +47,8 @@ const caseStudies = [
     result:
       "How A Marketing Agency Went From Relying On Inbound To Booking 63 Calls In 2 Months",
     youtubeId: "bVtCHb6blRo",
-    thumbnail: "src/assets/Eugene_thumbnail.jpg",
-    clientImage: "src/assets/Eugene.jpg",
+    thumbnail: Eugene_thumbnail,
+    clientImage: Eugene,
   },
   {
     title: "Generate 23 Qualified Commercial Leads in 4 Weeks",
@@ -38,8 +56,8 @@ const caseStudies = [
     result:
       "How This 80+ Location Commercial Cleaning Company Generated 23 Qualified Commercial Leads in 4 Weeks.",
     youtubeId: "AAilalB2iWI",
-    thumbnail: "src/assets/Cole_thumbnail.jpg",
-    clientImage: "src/assets/Cole.jpg",
+    thumbnail: Cole_thumbnail,
+    clientImage: Cole,
   },
   {
     title: "Add $120,000 in 6 Months",
@@ -47,8 +65,8 @@ const caseStudies = [
     result:
       "How This Family-Owned Cleaning Business Added $120K In 6 Months With AI.",
     youtubeId: "p2cEKQRt0YA",
-    thumbnail: "src/assets/Taylor_thumbnail.jpg",
-    clientImage: "src/assets/Taylor.jpg",
+    thumbnail: Taylor_thumbnail,
+    clientImage: Taylor,
   },
   {
     title: "4 Recurring Commercial Clients in 7 Weeks",
@@ -56,8 +74,8 @@ const caseStudies = [
     result:
       "How A Commercial Cleaning Business Signed 4 Recurring Cleaning Clients in 7 Weeks.",
     youtubeId: "wyjlnJ83H9c",
-    thumbnail: "src/assets/Nickolas_thumbnail.jpg",
-    clientImage: "src/assets/Nickolas.jpg",
+    thumbnail: Nickolas_thumbnail,
+    clientImage: Nickolas,
   },
   {
     title: "Generated 33 Qualified Leads In 1 Month",
@@ -65,8 +83,8 @@ const caseStudies = [
     result:
       "How We Generated 33 Quote-Ready Leads In 1 Month For A $2.9M Per Year Cleaning Business.",
     youtubeId: "OiC9wdyogwY",
-    thumbnail: "src/assets/Arnav_thumbnail.jpg",
-    clientImage: "src/assets/Arnav.jpg",
+    thumbnail: Arnav_thumbnail,
+    clientImage: Arnav,
   },
   {
     title: "From 0 Calls To Booking 45 Meetings In 4 Months",
@@ -74,8 +92,8 @@ const caseStudies = [
     result:
       "From 0 Calls From Outbound To Booking 45 Qualified Meetings In 4 Months For Their Software Development Services.",
     youtubeId: "6IylTt9w4vA",
-    thumbnail: "src/assets/Alexey_thumbnail.jpg",
-    clientImage: "src/assets/Alexey.jpg",
+    thumbnail: Alexey_thumbnail,
+    clientImage: Alexey,
   },
 ];
 
