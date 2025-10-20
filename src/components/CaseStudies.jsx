@@ -6,40 +6,40 @@ import "swiper/css/pagination";
 
 const caseStudies = [
   {
-    title: "From 0 to 25 Meetings in 30 Days",
-    client: "B2B Marketing Agency",
+    title: "6 Deals Closed in 2 Months",
+    client: "Ahmed Almnaseer, Head of Sales @ Arcady Media, United States",
     result:
-      "Helped a B2B marketing agency secure 25 meetings in the first 30 days of campaign launch.",
-    youtubeId: "VIDEO_ID_1",
-    thumbnail: "/assets/case1-thumb.jpg",
-    clientImage: "/assets/client-placeholder.jpg", // 👈 Placeholder
+      "From 0 Calls Booked with Cold Email To Closing 6 E-commerce Email Marketing Clients Signed in 2 Months With Cold Email.",
+    youtubeId: "sfvlrpkBF2o",
+    thumbnail: "src/assets/Ahmed_thumbnail.jpg",
+    clientImage: "src/assets/Ahmed.jpg", // 👈 Placeholder
   },
   {
-    title: "$300k Pipeline in 6 Weeks",
-    client: "Cloud Security Provider",
+    title: "1 Call a Month to 97 Calls in 2 Months",
+    client: "Daniel Sherf, Co-Founder @ Feature Digital, Israel",
     result:
-      "Built a $300k sales pipeline within 6 weeks by refining ICP targeting and multi-channel outreach.",
-    youtubeId: "VIDEO_ID_2",
-    thumbnail: "/assets/case2-thumb.jpg",
-    clientImage: "/assets/client-placeholder.jpg",
+      "From Booking 1 Meeting A Month To Booking 97 Meetings in 2 Months (Including a meeting with Vodafone).",
+    youtubeId: "1R1zDHS3Wnc",
+    thumbnail: "src/assets/Daniel_thumbnail.png",
+    clientImage: "src/assets/Daniel.jpg",
   },
   {
-    title: "Boosted Conversion Rates by 3x",
-    client: "HR Tech Startup",
+    title: "Networking & Referrals To Booking 63 Meetings",
+    client: "Eugen Kim, Head of Strategy @ First Page Digital, Singapore",
     result:
-      "Achieved a 3x boost in conversion rates through A/B tested outreach and optimized follow-ups.",
-    youtubeId: "VIDEO_ID_3",
-    thumbnail: "/assets/case3-thumb.jpg",
-    clientImage: "/assets/client-placeholder.jpg",
+      "How A Marketing Agency Went From Relying On Inbound To Booking 63 Calls In 2 Months",
+    youtubeId: "bVtCHb6blRo",
+    thumbnail: "src/assets/Eugene_thumbnail.jpg",
+    clientImage: "src/assets/Eugene.jpg",
   },
   {
-    title: "40 Meetings Booked in 60 Days",
-    client: "AI Software Development Firm",
+    title: "Generate 23 Qualified Commercial Leads in 4 Weeks",
+    client: "Cole Winsness, Marketing Director @ Zerorez of Atlanta, United States",
     result:
-      "Generated 40 booked meetings in under 60 days for an AI software development company through refined targeting and messaging.",
-    youtubeId: "VIDEO_ID_4",
-    thumbnail: "/assets/case4-thumb.jpg",
-    clientImage: "/assets/client-placeholder.jpg",
+      "How This 80+ Location Commercial Cleaning Company Generated 23 Qualified Commercial Leads in 4 Weeks.",
+    youtubeId: "AAilalB2iWI",
+    thumbnail: "src/assets/Cole_thumbnail.jpg",
+    clientImage: "src/assets/Cole.jpg",
   },
   {
     title: "$450k Pipeline in 90 Days",
