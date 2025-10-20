@@ -1,4 +1,5 @@
 import React from "react";
+import Propic from "../assets/Propic.jpg"; // ✅ Import your profile picture
 
 export default function AboutSection() {
   return (
@@ -9,7 +10,10 @@ export default function AboutSection() {
       <div className="max-w-5xl mx-auto px-6 text-center fade-slide-in">
         {/* Section Header */}
         <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
-          Who’s Behind <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Plnitude</span>
+          Who’s Behind{" "}
+          <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">
+            Plnitude
+          </span>
         </h2>
         <p className="text-gray-600 max-w-2xl mx-auto mb-14 text-lg">
           The story behind Plnitude — a performance-driven outbound agency built
@@ -19,7 +23,8 @@ export default function AboutSection() {
         {/* Founder Content Card */}
         <div className="bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-10 md:p-16 max-w-3xl mx-auto text-left md:text-center transition-all duration-700 hover:shadow-2xl">
           <p className="text-gray-700 leading-relaxed text-lg mb-6">
-            I’m <span className="font-semibold text-sky-600">Emmanuel</span>, Founder of{" "}
+            I’m <span className="font-semibold text-sky-600">Emmanuel</span>,
+            Founder of{" "}
             <span className="font-semibold text-sky-600">Plnitude</span>.
           </p>
 
@@ -47,11 +52,13 @@ export default function AboutSection() {
           </div>
         </div>
 
-        {/* Optional Visual (Placeholder) */}
+        {/* Founder Image */}
         <div className="mt-16 flex justify-center">
-          <div className="w-32 h-32 rounded-full bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-500 text-sm font-medium shadow-inner">
-            Founder Image
-          </div>
+          <img
+            src={Propic}
+            alt="Founder of Plnitude"
+            className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-sky-200 shadow-lg hover:shadow-xl transition-all duration-500"
+          />
         </div>
       </div>
     </section>
