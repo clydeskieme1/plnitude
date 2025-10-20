@@ -92,12 +92,20 @@ export default function CaseStudies() {
   };
 
   return (
-    <section className="py-20 bg-transparent text-gray-900 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-900 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Case Studies
-        </h2>
+        {/* Header */}
+        <div className="text-center mb-14">
+          <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
+            Case <span className="text-sky-500">Studies</span>
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Proven client outcomes powered by precision targeting and
+            data-driven outbound execution.
+          </p>
+        </div>
 
+        {/* Swiper */}
         <div
           className={`transition-opacity duration-700 ${
             isFading ? "opacity-40" : "opacity-100"
@@ -106,7 +114,7 @@ export default function CaseStudies() {
           <Swiper
             modules={[Autoplay, Pagination]}
             slidesPerView={1}
-            spaceBetween={30}
+            spaceBetween={36}
             breakpoints={{
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
@@ -120,36 +128,37 @@ export default function CaseStudies() {
             }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={handleSlideChange}
+            className="pb-20"
           >
             {caseStudies.map((study, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col transition-all duration-300 hover:shadow-lg min-h-[480px]">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:-translate-y-1 min-h-[520px]">
                   {/* Thumbnail */}
                   <div className="w-full aspect-video overflow-hidden flex-shrink-0">
                     <img
                       src={study.thumbnail}
                       alt={study.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
                     />
                   </div>
 
                   {/* Content */}
-                  <div className="p-6 flex flex-col justify-between flex-grow">
-                    <div className="flex-grow">
-                      <h3 className="text-lg font-semibold mb-1">
+                  <div className="p-8 flex flex-col flex-grow justify-between">
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900 mb-1 leading-snug">
                         {study.title}
                       </h3>
-                      <p className="text-sm text-gray-500 mb-2">
+                      <p className="text-sky-600 font-medium mb-2 text-sm">
                         Client: {study.client}
                       </p>
-                      <p className="text-sm text-gray-700 leading-relaxed">
+                      <p className="text-gray-700 text-sm leading-relaxed">
                         {study.result}
                       </p>
                     </div>
 
                     <button
                       onClick={() => handleOpenModal(study)}
-                      className="mt-5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm py-2 rounded-lg transition"
+                      className="mt-6 bg-sky-600 hover:bg-sky-700 text-white text-sm py-2.5 rounded-lg shadow transition-all duration-300"
                     >
                       View Case Study
                     </button>
@@ -163,27 +172,27 @@ export default function CaseStudies() {
         {/* Modal */}
         {selectedCase && (
           <div
-            className="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+            className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm"
             onClick={handleCloseModal}
           >
             <div
-              className="bg-white rounded-2xl p-6 max-w-3xl w-full relative text-gray-900"
+              className="bg-white rounded-3xl p-8 max-w-3xl w-full relative text-gray-900 shadow-2xl animate-fadeIn"
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className="absolute top-3 right-3 text-gray-500 hover:text-black"
+                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl"
                 onClick={handleCloseModal}
               >
                 ✕
               </button>
-              <h3 className="text-2xl font-semibold mb-2">
+              <h3 className="text-3xl font-semibold mb-2 text-sky-700">
                 {selectedCase.title}
               </h3>
-              <p className="text-gray-500 mb-4">
+              <p className="text-sky-500 mb-3 font-medium">
                 Client: {selectedCase.client}
               </p>
               <p className="text-gray-700 mb-6">{selectedCase.result}</p>
-              <div className="aspect-video">
+              <div className="aspect-video rounded-lg overflow-hidden">
                 <iframe
                   src={`https://www.youtube.com/embed/${selectedCase.youtubeId}`}
                   title={selectedCase.title}

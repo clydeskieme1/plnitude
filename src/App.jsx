@@ -5,9 +5,9 @@ import SliderSection from "./components/SliderSection";
 import WhyPlnitude from "./components/WhyPlnitude";
 import FAQSection from "./components/FAQSection";
 import HowWeWork from "./components/HowWeWork.jsx";
-import Testimonials from "./components/Testimonials";
 import CaseStudies from "./components/CaseStudies";
 import AboutSection from "./components/AboutSection";
+import CTABookCall from "./components/CTABookCall";
 
 
 function App() {
@@ -20,9 +20,9 @@ function App() {
         <WhyPlnitude />
         <HowWeWork />
         <CaseStudies />
-        <Testimonials />
         <AboutSection />
         <FAQSection />
+        <CTABookCall />
       </main>
       <Footer />
     </div>

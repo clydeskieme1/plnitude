@@ -1,73 +1,58 @@
-import { motion } from "framer-motion";
+import React from "react";
 
 export default function AboutSection() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-800">
-      <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        {/* Left Content */}
-        <motion.div
-          className="flex-1 text-center md:text-left"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="text-5xl font-bold text-sky-700 mb-4">
-            Who’s Behind <span className="text-sky-500">Plnitude</span>
-          </h2>
+    <section
+      id="about"
+      className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-800 relative overflow-hidden"
+    >
+      <div className="max-w-5xl mx-auto px-6 text-center fade-slide-in">
+        {/* Section Header */}
+        <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
+          Who’s Behind <span className="text-sky-500">Plnitude</span>
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto mb-14 text-lg">
+          The story behind Plnitude — a performance-driven outbound agency built
+          by someone who knows exactly what it takes to help businesses scale.
+        </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed mb-6">
-            Plnitude was founded by a passionate team of outreach and growth
-            specialists dedicated to helping brands build real connections
-            through data-driven campaigns. With a focus on strategy,
-            creativity, and transparency, we work closely with clients to design
-            outreach systems that drive measurable results and lasting growth.
+        {/* Founder Content Card */}
+        <div className="bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-10 md:p-16 max-w-3xl mx-auto text-left md:text-center transition-all duration-700 hover:shadow-2xl">
+          <p className="text-gray-700 leading-relaxed text-lg mb-6">
+            I’m <span className="font-semibold text-sky-600">Emmanuel</span>, Founder of{" "}
+            <span className="font-semibold text-sky-600">Plnitude</span>.
           </p>
 
-          <p className="text-gray-600 text-lg leading-relaxed mb-8">
-            Led by <span className="font-semibold text-sky-700">[Your Name]</span>, 
-            a results-oriented digital strategist with a background in lead
-            generation and automation. Plnitude combines human insight with
-            smart technology to scale meaningful conversations — not just
-            numbers.
+          <p className="text-gray-700 leading-relaxed text-lg mb-6">
+            After years of working with agencies struggling to scale, I built
+            Plnitude with one goal — to make growth predictable, risk-free, and
+            performance-driven.
           </p>
 
-          {/* Social Links (optional) */}
-          <div className="flex justify-center md:justify-start gap-4">
-            <a
-              href="#"
-              target="_blank"
-              className="px-5 py-2 bg-sky-600 text-white rounded-full font-medium shadow hover:bg-sky-700 transition"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              className="px-5 py-2 bg-gray-200 text-gray-700 rounded-full font-medium hover:bg-gray-300 transition"
-            >
-              Contact
-            </a>
-          </div>
-        </motion.div>
+          <p className="text-gray-700 leading-relaxed text-lg mb-6">
+            We’ve helped dozens of agencies fill their calendars with qualified,
+            conversion-ready meetings — without retainers, without long
+            contracts, and without the fluff.
+          </p>
 
-        {/* Right Image */}
-        <motion.div
-          className="flex-1 flex justify-center"
-          initial={{ opacity: 0, x: 40 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden shadow-2xl">
-            {/* Replace with your image */}
-            <img
-              src="/images/founder-placeholder.jpg"
-              alt="Founder of Plnitude"
-              className="w-full h-full object-cover"
-            />
+          <p className="text-gray-700 leading-relaxed text-lg italic">
+            If you’re tired of relying on referrals or inconsistent pipelines,
+            our Value-First Outreach System is built to change that.
+          </p>
+
+          {/* Signature */}
+          <div className="mt-10">
+            <p className="text-sky-600 font-semibold text-lg">— Emmanuel</p>
+            <p className="text-gray-500 text-sm">Founder of Plnitude</p>
           </div>
-        </motion.div>
+        </div>
+
+        {/* Optional Visual (Placeholder) */}
+        <div className="mt-16 flex justify-center">
+          <div className="w-32 h-32 rounded-full bg-sky-100 border border-sky-200 flex items-center justify-center text-sky-500 text-sm font-medium shadow-inner">
+            Founder Image
+          </div>
+        </div>
       </div>
     </section>
   );
