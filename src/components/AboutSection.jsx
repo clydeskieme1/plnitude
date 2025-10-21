@@ -16,8 +16,7 @@ export default function AboutSection() {
           </span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-14 text-lg">
-          A performance-driven outbound agency built
-          by someone who knows exactly what it takes to help businesses scale.
+          
         </p>
 
         {/* Founder Content Card */}
