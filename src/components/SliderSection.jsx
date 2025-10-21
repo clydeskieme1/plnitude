@@ -27,7 +27,7 @@ export default function SliderSection() {
           Brands we’ve <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">booked meetings</span> with for our clients
         </h2>
 
-        {/* Single row: continuous leftward scroll */}
+        {/* Slider only */}
         <div
           className="relative overflow-hidden rounded-2xl shadow-soft"
           style={{

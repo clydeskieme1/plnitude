@@ -21,7 +21,11 @@ export default function WhyPlnitude() {
   const reasons = [
     {
       title: "Pay Only for Results",
-      desc: "No retainers. No contracts. You only pay when a qualified prospect shows up.",
+      desc: "No monthly retainers. No contracts. You only pay when a qualified prospect shows up.",
+    },
+    {
+      title: "No Onboarding Fee To Get Started",
+      desc: "No setup fees are needed to start with us.",
     },
     {
       title: "Fully Done-for-You System",
@@ -29,19 +33,15 @@ export default function WhyPlnitude() {
     },
     {
       title: "Meetings That Convert",
-      desc: "We don’t book calls for vanity metrics. Every meeting is vetted and qualified to your ICP.",
+      desc: "Before calls are booked in your calendar, they are vetted by your criteria. You are also trained on how to effectively convert these meetings into long-term clients.",
     },
     {
       title: "Value-First Outreach",
-      desc: "Your prospects don’t get spammed. Every touchpoint provides genuine value first.",
+      desc: "Your prospects don't get spammed with generic templates. Every touchpoint provides genuine value first to build trust.",
     },
     {
       title: "Trusted by Growth-Focused Agencies",
-      desc: "From SaaS to eCommerce, we’ve helped partners book meetings with brands like Rolls-Royce and Vodafone.",
-    },
-    {
-      title: "Data-Driven Optimization",
-      desc: "We continuously refine campaigns using real performance data improving response rates, conversions, and ROI.",
+      desc: "From industries ranging from SaaS to Commerce, we've helped marketing agencies book meetings with brands like Rolls-Royce and Vodafone.",
     },
   ];
 
@@ -51,8 +51,8 @@ export default function WhyPlnitude() {
       id="why-plnitude"
       className={`py-20 bg-transparent text-center transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
-      <h2 className="text-4xl font-bold text-white mb-6">
-        Why Agencies Choose{" "}
+      <h2 className="text-5xl font-bold text-white mb-6 tracking-tight">
+        Why Choose{" "}
         <span className="font-display bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
           PLNITUDE
         </span>
@@ -62,16 +62,17 @@ export default function WhyPlnitude() {
         performance only model. Here’s what makes us different:
       </p>
 
-      <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-8">
         {reasons.map((item, index) => (
           <div
             key={index}
-            className="bg-white/5 rounded-2xl shadow-md p-8 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500"
+            className="relative bg-white/5 backdrop-blur-sm border border-white/6 rounded-2xl p-8 shadow-md transition-all duration-500 hover:shadow-xl hover:-translate-y-1 hover:scale-[1.01] text-left"
           >
-            <h3 className="text-2xl font-semibold text-white mb-3">
+            <div className="h-[4px] w-12 bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full mb-4"></div>
+            <h3 className="font-display text-xl md:text-2xl font-semibold text-white tracking-tight leading-tight mb-2">
               {item.title}
             </h3>
-            <p className="text-gray-300 leading-relaxed">{item.desc}</p>
+            <p className="text-gray-300 text-base leading-relaxed">{item.desc}</p>
           </div>
         ))}
       </div>

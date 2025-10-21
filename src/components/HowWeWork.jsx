@@ -113,7 +113,7 @@ export default function HowWeWork() {
     >
       <div className="max-w-6xl mx-auto text-center px-6">
         {/* Header */}
-        <h2 className="text-5xl font-bold text-white mb-4">
+        <h2 className="text-5xl font-bold text-white mb-4 tracking-tight">
           How We <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">Work</span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-16 text-lg">

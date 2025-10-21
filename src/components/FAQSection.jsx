@@ -6,7 +6,7 @@ export default function FAQSection() {
     {
       question: "What exactly do we offer?",
       answer:
-        "We deliver qualified, show-up meetings with your ideal prospects — not just cold leads. Our campaigns are built to connect, engage, and convert.",
+        "We deliver qualified, show-up meetings with your ideal prospects through primarily cold email. Our campaigns are built to connect, engage, and convert.",
     },
     {
       question: "How do you find the right prospects?",
@@ -17,11 +17,6 @@ export default function FAQSection() {
       question: "How fast until we see meetings?",
       answer:
         "Most clients see meetings begin within 2–3 weeks once the campaign and deliverability are fully set up and warmed. Momentum compounds in weeks 4–8.",
-    },
-    {
-      question: "Which industries do you support?",
-      answer:
-        "We work across B2B services, SaaS, agencies, and local commercial services (e.g., cleaning, maintenance, logistics). If your offer is clear and valuable, we can help.",
     },
     {
       question: "Do you integrate with our CRM and calendar?",
@@ -36,17 +31,12 @@ export default function FAQSection() {
     {
       question: "How do you price your service?",
       answer:
-        "Typically a performance-based engagement with a setup phase to ensure deliverability, data, and systems are dialed in. We tailor to your goals and sales cycle.",
+        "Typically we charge our clients on a performance based engagement, primarily just paying per qualified meeting that shows.",
     },
     {
       question: "Can you guarantee results?",
       answer:
         "We commit to booked, qualified meetings aligned to your ICP. Outcomes depend on market fit and offer strength, but our systems consistently produce pipeline.",
-    },
-    {
-      question: "Is your outreach compliant?",
-      answer:
-        "We respect GDPR/PECR/CAN-SPAM. We use compliant sending practices, clear opt-out, and only contact relevant business prospects with legit interest signals.",
     },
     {
       question: "How do you handle warm leads and follow-ups?",

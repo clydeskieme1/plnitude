@@ -10,6 +10,8 @@ import Footer from "./components/Footer";
 import AnimatedBackground from "./components/AnimatedBackground";
 import useFadeInOnScroll from "./hooks/useFadeInOnScroll";
 import SliderSection from "./components/SliderSection";
+import WhereAgenciesGetStuck from "./components/WhereAgenciesGetStuck";
+import OfficialPartner from "./components/OfficialPartner";
 
 export default function App() {
   useFadeInOnScroll();
@@ -20,6 +22,8 @@ export default function App() {
       <main>
         <HeroSection />
         <SliderSection />
+        <OfficialPartner />
+        <WhereAgenciesGetStuck />
         <WhyPlnitude />
         <HowWeWork />
         <CaseStudies />

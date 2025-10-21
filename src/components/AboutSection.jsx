@@ -12,7 +12,7 @@ export default function AboutSection() {
         <h2 className="text-5xl font-bold text-white mb-4 tracking-tight">
           Who’s Behind{" "}
           <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
-            Plnitude
+            PLNITUDE
           </span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-14 text-lg">
@@ -23,26 +23,33 @@ export default function AboutSection() {
         {/* Founder Content Card */}
         <div className="bg-white/5 backdrop-blur-md border border-white/6 rounded-3xl shadow-xl p-10 md:p-16 max-w-3xl mx-auto text-left md:text-center transition-all duration-700 hover:shadow-2xl">
           <p className="text-gray-300 leading-relaxed text-lg mb-6">
-            I’m <span className="font-semibold text-sky-300">Emmanuel</span>,
+            Hi I’m <span className="font-semibold text-sky-300">Emmanuel</span>,
             Founder of{" "}
-            <span className="font-semibold text-sky-300">Plnitude</span>.
+            <span className="font-semibold text-sky-300">PLNITUDE</span>.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg mb-6">
-            After years of working with agencies struggling to scale, I built
-            Plnitude with one goal, to make growth predictable, risk-free, and
-            performance-driven.
+            Now, you may be wondering: “What the hell does PLNITUDE mean?” 
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg mb-6">
-            We’ve helped dozens of agencies fill their calendars with qualified,
-            conversion-ready meetings, without retainers, without long
-            contracts, and without the fluff.
+            Great question (and I’d be lying if I didn’t say I found it through an online thesaurus).
+          </p>
+
+          <p className="text-gray-300 leading-relaxed text-lg mb-6">
+            You see, ‘plenitude’ simply means ‘an abundance’.
+          </p>
+
+          <p className="text-gray-300 leading-relaxed text-lg mb-6">
+            After nearly 3 years of working with agencies struggling to scale, I built PLNITUDE with the goal to make abundant growth predictable and risk-free for agencies.
+          </p>
+
+          <p className="text-gray-300 leading-relaxed text-lg mb-6">
+            We’ve had the privilege of helping dozens of agencies and B2B companies to fill their calendars with qualified, conversion-ready meetings, without retainers, long contracts or fluff.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg italic">
-            If you’re tired of relying on referrals or inconsistent pipelines,
-            our Value-First Outreach System is built to change that.
+            So, If you’re tired of relying on referrals or inconsistent pipelines, our Value-First outreach strategy is built to change that for your business!
           </p>
 
           {/* Signature */}
