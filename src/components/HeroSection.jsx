@@ -1,11 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function HeroSection() {
+  useEffect(() => {
+    // ✅ Load Wistia player scripts dynamically
+    const script1 = document.createElement("script");
+    script1.src = "https://fast.wistia.com/player.js";
+    script1.async = true;
+    document.body.appendChild(script1);
+
+    const script2 = document.createElement("script");
+    script2.src = "https://fast.wistia.com/embed/etz0seiito.js";
+    script2.type = "module";
+    script2.async = true;
+    document.body.appendChild(script2);
+
+    return () => {
+      document.body.removeChild(script1);
+      document.body.removeChild(script2);
+    };
+  }, []);
+
   return (
-    <section
-      id="hero"
-      className="relative bg-transparent overflow-hidden"
-    >
+    <section id="hero" className="relative bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col items-center justify-center text-center py-28 gap-8">
         {/* Floating Label */}
         <div className="animate-fadeUp">
@@ -18,25 +34,37 @@ export default function HeroSection() {
 
         {/* Title */}
         <h1 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight animate-fadeUp">
-          We’ll book you 10-15 <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">qualified meetings</span> every month with decision-makers who want your services.
+          We’ll book you 10–15{" "}
+          <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
+            qualified meetings
+          </span>{" "}
+          every month with decision-makers who want your services.
         </h1>
 
         {/* Subheading */}
         <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl animate-fadeUp delay-100">
-            Pay only per qualified meeting that shows. No setup fees. Quit anytime.
+          Pay only per qualified meeting that shows. No setup fees. Quit anytime.
         </p>
 
-        {/* Video */}
+        {/* ✅ VSL Embed */}
         <div className="w-full flex justify-center animate-fadeUp delay-200">
           <div className="relative w-full max-w-4xl p-[2px] rounded-2xl bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 animate-gradientFlow">
             <div className="relative aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black">
-              <iframe
-                src="https://www.youtube.com/embed/VFA4QRK9PP0?si=HEc3NjwrzPDRtx2p"
-                title="PLNITUDE Overview Video"
-                allow="autoplay; encrypted-media"
-                allowFullScreen
-                className="absolute top-0 left-0 w-full h-full object-cover"
-              ></iframe>
+              {/* Wistia Embed */}
+              <style>
+                {`
+                  wistia-player[media-id='etz0seiito']:not(:defined) {
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/etz0seiito/swatch');
+                    display: block;
+                    filter: blur(5px);
+                    padding-top: 56.25%;
+                  }
+                `}
+              </style>
+              <wistia-player
+                media-id="etz0seiito"
+                aspect="1.7777777777777777"
+              ></wistia-player>
             </div>
           </div>
         </div>
@@ -52,7 +80,6 @@ export default function HeroSection() {
           </a>
         </div>
       </div>
-
     </section>
   );
 }
