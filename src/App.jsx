@@ -14,7 +14,7 @@ import SliderSection from "./components/SliderSection";
 export default function App() {
   useFadeInOnScroll();
   return (
-    <div className="relative text-gray-800 font-sans overflow-x-hidden">
+    <div className="relative z-10 text-gray-200 font-sans overflow-x-hidden bg-transparent min-h-screen">
       <AnimatedBackground />
       <Navbar />
       <main>

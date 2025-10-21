@@ -48,13 +48,13 @@ export default function HowWeWork() {
       id: 3,
       icon: <FaCogs size={24} />,
       title: "Setup & Launch",
-      desc: "From domain warm-up to data verification and inbox management — we handle the technical setup.",
+      desc: "From domain warm-up to data verification and inbox management, we handle the technical setup.",
     },
     {
       id: 4,
       icon: <FaChartLine size={24} />,
       title: "Meetings on Your Calendar",
-      desc: "Calls are booked directly on your calendar — all you do is show up and close.",
+      desc: "Calls are booked directly on your calendar, all you do is show up and close.",
     },
     {
       id: 5,
@@ -102,23 +102,21 @@ export default function HowWeWork() {
   const handleIconClick = (index) => {
     setIsPaused(true);
     changeStep(index);
-    setTimeout(() => setIsPaused(false), 1000); // resume after 2s
+    setTimeout(() => setIsPaused(false), 1000); // resume after 1s
   };
 
   return (
     <section
       id="how-we-work"
       ref={sectionRef}
-      className={`py-28 bg-gradient-to-b from-white to-sky-50 text-gray-800 overflow-hidden relative transition-all duration-700 ease-out ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-      }`}
+      className={`py-28 bg-transparent text-gray-200 overflow-hidden relative transition-all duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
     >
       <div className="max-w-6xl mx-auto text-center px-6">
         {/* Header */}
-        <h2 className="text-5xl font-bold text-sky-700 mb-4">
-          How We <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">Work</span>
+        <h2 className="text-5xl font-bold text-white mb-4">
+          How We <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">Work</span>
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto mb-16 text-lg">
+        <p className="text-gray-300 max-w-2xl mx-auto mb-16 text-lg">
           A clear, structured process that turns cold outreach into predictable, qualified meetings.
         </p>
 
@@ -127,24 +125,18 @@ export default function HowWeWork() {
           {steps.map((step, index) => (
             <div
               key={step.id}
-              className={`absolute inset-0 bg-white/90 backdrop-blur-md border border-sky-100 rounded-3xl shadow-xl p-12 flex flex-col justify-center transition-opacity duration-700 ease-in-out ${
-                index === activeStep
-                  ? "opacity-100 z-20"
-                  : index === prevStep
-                  ? "opacity-0 z-10"
-                  : "opacity-0 z-0"
-              }`}
+              className={`absolute inset-0 bg-white/5 backdrop-blur-md border border-white/6 rounded-3xl shadow-xl p-12 flex flex-col justify-center transition-opacity duration-700 ease-in-out ${index === activeStep ? "opacity-100 z-20" : index === prevStep ? "opacity-0 z-10" : "opacity-0 z-0"}`}
             >
-              <div className="flex justify-center mb-5 text-sky-600 transition-all duration-300">
+              <div className="flex justify-center mb-5 text-sky-300 transition-all duration-300">
                 {step.icon}
               </div>
-              <p className="font-semibold text-gray-500 mb-1 text-base">
+              <p className="font-semibold text-gray-400 mb-1 text-base">
                 STEP {step.id}
               </p>
-              <h3 className="text-3xl font-semibold text-gray-800 mb-3">
+              <h3 className="text-3xl font-semibold text-white mb-3">
                 {step.title}
               </h3>
-              <p className="text-gray-600 max-w-lg mx-auto text-lg leading-relaxed">
+              <p className="text-gray-300 max-w-lg mx-auto text-lg leading-relaxed">
                 {step.desc}
               </p>
             </div>
@@ -157,11 +149,7 @@ export default function HowWeWork() {
             <button
               key={step.id}
               onClick={() => handleIconClick(index)}
-              className={`relative group w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] flex items-center justify-center rounded-full transition-all duration-400 ${
-                activeStep === index
-                  ? "text-white scale-110"
-                  : "bg-white border border-sky-100 text-sky-600 hover:shadow-md hover:scale-105"
-              } ${iconVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
+              className={`relative group w-[56px] h-[56px] sm:w-[62px] sm:h-[62px] flex items-center justify-center rounded-full transition-all duration-400 ${activeStep === index ? "text-white scale-110" : "bg-white/5 border border-white/6 text-sky-300 hover:shadow-md hover:scale-105"} ${iconVisible[index] ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"}`}
               style={{
                 transitionDelay: `${index * 0.05}s`,
                 transitionProperty: "all",
@@ -171,8 +159,8 @@ export default function HowWeWork() {
             >
               {activeStep === index && (
                 <>
-                  <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(14,165,233,0.12)_0%,rgba(20,184,166,0.28)_40%,rgba(6,182,212,0.36)_70%,rgba(14,165,233,0.12)_100%)] blur-sm animate-rotate-glow"></span>
-                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-500 to-sky-700 shadow-lg opacity-30 animate-hue-shift"></span>
+                  <span className="absolute inset-0 rounded-full bg-[conic-gradient(from_0deg,rgba(14,165,233,0.08)_0%,rgba(20,184,166,0.12)_40%,rgba(6,182,212,0.16)_70%,rgba(14,165,233,0.08)_100%)] blur-sm animate-rotate-glow"></span>
+                  <span className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-600 to-sky-700 shadow-lg opacity-20 animate-hue-shift"></span>
                 </>
               )}
               <span className="relative z-10">{step.icon}</span>
@@ -181,7 +169,7 @@ export default function HowWeWork() {
         </div>
 
         {/* Decorative Bar */}
-        <div className="mt-16 h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-sky-600 rounded-full"></div>
+        <div className="mt-16 h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full"></div>
       </div>
     </section>
   );

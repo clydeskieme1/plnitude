@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -20,7 +20,6 @@ import Taylor_thumbnail from "../assets/Taylor_thumbnail.jpg";
 import Taylor from "../assets/Taylor.jpg";
 import Nickolas_thumbnail from "../assets/Nickolas_thumbnail.jpg";
 import Nickolas from "../assets/Nickolas.jpg";
-
 
 const caseStudies = [
   {
@@ -117,21 +116,29 @@ export default function CaseStudies() {
     setTimeout(() => setIsFading(false), 600);
   };
 
+  useEffect(() => {
+    const onKey = (e) => {
+      if (e.key === "Escape") handleCloseModal();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   return (
     <section
       id="case-studies"
-      className="py-24 bg-gradient-to-b from-white to-sky-50 text-gray-900 relative overflow-hidden"
+      className="py-24 bg-transparent text-gray-200 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-14">
-          <h2 className="text-5xl font-bold text-sky-700 mb-4 tracking-tight">
+          <h2 className="text-5xl font-bold text-white mb-4 tracking-tight">
             Case{" "}
-            <span className="bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 bg-clip-text text-transparent font-extrabold animate-gradientFlow">
+            <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
               Studies
             </span>
           </h2>
-          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
             Proven client outcomes powered by precision targeting and
             data-driven outbound execution.
           </p>
@@ -153,44 +160,52 @@ export default function CaseStudies() {
             }}
             loop={true}
             speed={700}
-            pagination={{ clickable: true }}
+            pagination={{ clickable: true, dynamicBullets: false }}
             autoplay={{
               delay: 4000,
               disableOnInteraction: false,
             }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={handleSlideChange}
-            className="pb-20"
+            className="pb-20 case-studies-swiper"
           >
             {caseStudies.map((study, index) => (
               <SwiperSlide key={index}>
-                <div className="bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 h-full flex flex-col justify-between transition-all duration-500 hover:shadow-xl hover:-translate-y-1 min-h-[520px]">
+                <div className="bg-white/5 rounded-3xl overflow-hidden shadow-md border border-white/10 h-full flex flex-col justify-between transition-all duration-500 hover:shadow-2xl hover:-translate-y-1 min-h-[520px]">
                   {/* Thumbnail */}
-                  <div className="w-full aspect-video overflow-hidden flex-shrink-0">
+                  <div className="relative w-full aspect-video overflow-hidden flex-shrink-0 group">
                     <img
                       src={study.thumbnail}
                       alt={study.title}
-                      className="w-full h-full object-cover transform transition-transform duration-500 hover:scale-105"
+                      className="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <button
+                      onClick={() => handleOpenModal(study)}
+                      className="absolute bottom-3 right-3 bg-white/90 text-gray-900 text-xs font-semibold px-3 py-1.5 rounded-md shadow hover:bg-white"
+                      aria-label={`Play ${study.title}`}
+                    >
+                      ▶ Play
+                    </button>
                   </div>
 
                   {/* Content */}
                   <div className="p-8 flex flex-col flex-grow justify-between">
                     <div>
-                      <h3 className="text-xl font-semibold text-gray-900 mb-1 leading-snug">
+                      <h3 className="text-xl font-semibold text-white mb-1 leading-snug">
                         {study.title}
                       </h3>
-                      <p className="text-sky-600 font-medium mb-2 text-sm">
+                      <p className="text-sky-400 font-medium mb-2 text-sm">
                         Client: {study.client}
                       </p>
-                      <p className="text-gray-700 text-sm leading-relaxed">
+                      <p className="text-gray-300 text-sm leading-relaxed">
                         {study.result}
                       </p>
                     </div>
 
                     <button
                       onClick={() => handleOpenModal(study)}
-                      className="mt-6 bg-sky-600 hover:bg-sky-700 text-white text-sm py-2.5 rounded-lg shadow transition-all duration-300"
+                      className="mt-6 bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 text-white text-sm py-2.5 rounded-lg shadow transition-all duration-300 hover:brightness-110"
                     >
                       View Case Study
                     </button>
@@ -206,48 +221,53 @@ export default function CaseStudies() {
           <div
             className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 backdrop-blur-sm"
             onClick={handleCloseModal}
+            aria-modal="true"
+            role="dialog"
           >
             <div
-              className="bg-white rounded-3xl p-8 max-w-3xl w-full relative text-gray-900 shadow-2xl animate-fadeIn"
+              className="p-[2px] rounded-3xl bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 animate-gradientFlow"
               onClick={(e) => e.stopPropagation()}
             >
-              <button
-                className="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl"
-                onClick={handleCloseModal}
-              >
-                ✕
-              </button>
+              <div className="bg-[#061022] rounded-3xl p-8 max-w-3xl w-full relative text-gray-100 shadow-2xl animate-fadeIn">
+                <button
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-100 text-2xl"
+                  onClick={handleCloseModal}
+                  aria-label="Close"
+                >
+                  ✕
+                </button>
 
-              {/* Client Info */}
-              <div className="flex items-center gap-4 mb-6">
-                <img
-                  src={selectedCase.clientImage}
-                  alt={`${selectedCase.client} profile`}
-                  className="w-14 h-14 rounded-full object-cover shadow-md"
-                />
-                <div>
-                  <h3 className="text-2xl font-semibold text-gray-800 leading-snug">
-                    {selectedCase.title}
-                  </h3>
-                  <p className="text-sky-600 text-sm font-medium">
-                    Client: {selectedCase.client}
-                  </p>
+                {/* Client Info */}
+                <div className="flex items-center gap-4 mb-6">
+                  <img
+                    src={selectedCase.clientImage}
+                    alt={`${selectedCase.client} profile`}
+                    className="w-14 h-14 rounded-full object-cover shadow-md"
+                  />
+                  <div>
+                    <h3 className="text-2xl font-semibold text-white leading-snug">
+                      {selectedCase.title}
+                    </h3>
+                    <p className="text-sky-400 text-sm font-medium">
+                      Client: {selectedCase.client}
+                    </p>
+                  </div>
                 </div>
-              </div>
 
-              {/* Description */}
-              <p className="text-gray-700 mb-6">{selectedCase.result}</p>
+                {/* Description */}
+                <p className="text-gray-300 mb-6">{selectedCase.result}</p>
 
-              {/* Video */}
-              <div className="aspect-video rounded-lg overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${selectedCase.youtubeId}`}
-                  title={selectedCase.title}
-                  className="w-full h-full rounded-lg"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
+                {/* Video */}
+                <div className="aspect-video rounded-xl overflow-hidden border border-white/10">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${selectedCase.youtubeId}`}
+                    title={selectedCase.title}
+                    className="w-full h-full"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>

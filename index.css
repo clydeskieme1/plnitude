@@ -8,14 +8,24 @@ html {
   scroll-padding-top: 90px;
 }
 
-/* ---------------- PREMIUM BACKGROUND ANIMATION ---------------- */
+/* ---------------- PREMIUM BACKGROUND ANIMATION (DARK) ---------------- */
+
+/* Base radial gradient that feels like Scaletopia: teal/cyan accents on dark */
+.bg-gradient-base {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(14,165,233,0.18) 0%, transparent 35%),
+    radial-gradient(ellipse at 85% 100%, rgba(6,182,212,0.22) 0%, transparent 40%),
+    linear-gradient(180deg, #03040a 0%, #081227 100%);
+}
 
 .blob {
   position: absolute;
   border-radius: 50%;
-  filter: blur(120px);
-  opacity: 0.65;
-  mix-blend-mode: soft-light;
+  filter: blur(100px);
+  opacity: 0.55;
+  mix-blend-mode: screen;
   animation: float 32s ease-in-out infinite;
   will-change: transform;
 }
@@ -32,7 +42,7 @@ html {
 .blob-2 {
   width: 800px;
   height: 800px;
-  background: radial-gradient(circle at 70% 40%, rgba(20,184,166,0.5), transparent 70%);
+  background: radial-gradient(circle at 70% 40%, rgba(6,182,212,0.48), transparent 70%);
   bottom: -10%;
   right: -15%;
   animation-delay: 5s;
@@ -41,16 +51,34 @@ html {
 .blob-3 {
   width: 700px;
   height: 700px;
-  background: radial-gradient(circle at 60% 80%, rgba(99,102,241,0.45), transparent 70%);
+  background: radial-gradient(circle at 30% 30%, rgba(14,165,233,0.42), transparent 70%);
+  top: -20%;
+  left: -10%;
+  animation-delay: 0s;
+}
+
+.blob-4 {
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle at 70% 40%, rgba(6,182,212,0.35), transparent 70%);
+  bottom: -10%;
+  right: -15%;
+  animation-delay: 5s;
+}
+
+.blob-3 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at 60% 80%, rgba(6,182,212,0.22), transparent 70%);
   top: 20%;
   right: 25%;
   animation-delay: 10s;
 }
 
 .blob-4 {
-  width: 650px;
-  height: 650px;
-  background: radial-gradient(circle at 40% 50%, rgba(236,72,153,0.4), transparent 70%);
+  width: 560px;
+  height: 560px;
+  background: radial-gradient(circle at 40% 50%, rgba(14,165,233,0.20), transparent 70%);
   bottom: 10%;
   left: 15%;
   animation-delay: 15s;
@@ -67,13 +95,12 @@ html {
 
 @keyframes hue-shift {
   0% { filter: hue-rotate(0deg); }
-  50% { filter: hue-rotate(40deg); }
+  50% { filter: hue-rotate(30deg); }
   100% { filter: hue-rotate(0deg); }
 }
 .animate-hue-shift {
   animation: hue-shift 40s ease-in-out infinite;
 }
-
 
 /* =============== FADE-IN SECTION ANIMATION =============== */
 
@@ -101,8 +128,8 @@ html {
   border-radius: inherit;
   background: linear-gradient(
     120deg,
-    rgba(14,165,233,0.25),
-    rgba(20,184,166,0.15)
+    rgba(14,165,233,0.12),
+    rgba(20,184,166,0.08)
   );
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -126,7 +153,7 @@ html {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255,255,255,0.35),
+    rgba(255,255,255,0.12),
     transparent
   );
   transition: transform 0.6s ease;
@@ -146,7 +173,7 @@ html {
 }
 .hover-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px -10px rgba(56,189,248,0.25);
+  box-shadow: 0 12px 30px -10px rgba(6,182,212,0.12);
 }
 
 /* =============== Missing animation utilities =============== */
@@ -160,6 +187,23 @@ html {
 .animate-gradientFlow {
   background-size: 200% 200%;
   animation: gradient-flow 6s linear infinite;
+}
+
+/* Subtle breathing pulse for gradient backgrounds (does not affect children) */
+@keyframes gradient-breathe {
+  0%, 100% { background-size: 200% 200%; }
+  50% { background-size: 240% 240%; }
+}
+/* Intensify gradient by gently pulsing saturation and brightness */
+@keyframes gradient-intensity {
+  0%, 100% { filter: saturate(1) brightness(1); }
+  50% { filter: saturate(1.15) brightness(1.06); }
+}
+/* Combine flow + breathe + intensity for a more visible pulse */
+.animate-gradientPulse {
+  background-size: 200% 200%;
+  animation: gradient-flow 5.5s linear infinite, gradient-breathe 5.5s ease-in-out infinite, gradient-intensity 5.5s ease-in-out infinite;
+  will-change: background-size, filter;
 }
 
 /* Continuous marquee scroll (for logo row) */
@@ -187,4 +231,58 @@ html {
 }
 .animate-fadeIn {
   animation: fade-in 0.6s ease-out forwards;
+}
+
+/* =============== Swiper pagination visibility (Case Studies) =============== */
+.case-studies-swiper {
+  position: relative;
+}
+.case-studies-swiper .swiper-pagination {
+  position: absolute !important;
+  bottom: 18px !important;
+  left: 50% !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  display: flex !important;
+  gap: 10px !important;
+  z-index: 30;
+  pointer-events: auto;
+  align-items: center;
+}
+.case-studies-swiper .swiper-pagination-bullet {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 1;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  margin: 0 !important;
+  transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
+}
+.case-studies-swiper .swiper-pagination-bullet:hover {
+  background: rgba(34, 211, 238, 0.28);
+  box-shadow: 0 0 8px rgba(34, 211, 238, 0.4);
+  transform: scale(1.15);
+}
+.case-studies-swiper .swiper-pagination-bullet-active {
+  background: linear-gradient(90deg, #38bdf8, #2dd4bf, #22d3ee);
+  box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.35), 0 0 10px rgba(34, 211, 238, 0.5);
+  transform: scale(1.25);
+}
+@media (min-width: 768px) {
+  .case-studies-swiper .swiper-pagination { bottom: 20px !important; }
+}
+@media (min-width: 1024px) {
+  .case-studies-swiper .swiper-pagination { bottom: 22px !important; }
+}
+
+/* Mobile menu slide-down animation */
+@keyframes slide-down {
+  0% { opacity: 0; transform: translateY(-8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideDown {
+  animation: slide-down 220ms ease-out;
 }
