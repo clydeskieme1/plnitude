@@ -58,8 +58,7 @@ export default function WhyPlnitude() {
         </span>
       </h2>
       <p className="text-lg text-gray-300 mb-12 max-w-2xl mx-auto">
-        We’re not another lead gen agency, we’re your growth partner on a
-        performance only model. Here’s what makes us different:
+        
       </p>
 
       <div className="max-w-6xl mx-auto px-6 grid sm:grid-cols-2 md:grid-cols-3 gap-8">

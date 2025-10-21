@@ -34,8 +34,9 @@ export default function WhereAgenciesGetStuck() {
           </span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-12 text-lg text-center">
-          Common bottlenecks that block pipeline growth, and how we design around them.
+           
         </p>
+        
 
         {/* Cards */}
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">

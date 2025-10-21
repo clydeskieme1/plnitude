@@ -16,7 +16,7 @@ export default function AboutSection() {
           </span>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-14 text-lg">
-          The story behind Plnitude, a performance-driven outbound agency built
+          A performance-driven outbound agency built
           by someone who knows exactly what it takes to help businesses scale.
         </p>
 

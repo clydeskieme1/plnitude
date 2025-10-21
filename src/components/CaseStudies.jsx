@@ -162,6 +162,7 @@ const caseStudies = [
 export default function CaseStudies() {
   const [selectedCase, setSelectedCase] = useState(null);
   const [showTestimonial, setShowTestimonial] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const swiperRef = useRef(null);
   const [isFading, setIsFading] = useState(false);
 
@@ -184,6 +185,24 @@ export default function CaseStudies() {
     setShowTestimonial(false);
   };
 
+  const toggleShowAll = () => {
+    setShowAll((prev) => {
+      const next = !prev;
+      setTimeout(() => {
+        if (swiperRef.current) {
+          swiperRef.current.update();
+          swiperRef.current.slideTo(0, 600);
+          // Ensure autoplay resumes and immediately advances one slide
+          if (swiperRef.current.autoplay) {
+            swiperRef.current.autoplay.start();
+          }
+          swiperRef.current.slideNext(600);
+        }
+      }, 0);
+      return next;
+    });
+  };
+
   const handleSlideChange = () => {
     setIsFading(true);
     setTimeout(() => setIsFading(false), 600);
@@ -196,6 +215,10 @@ export default function CaseStudies() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
+  const visibleStudies = showAll
+    ? caseStudies
+    : caseStudies.filter((cs) => ["Arcady Media", "Feature Digital", "First Page Digital"].includes(cs.company));
 
   return (
     <section
@@ -212,7 +235,7 @@ export default function CaseStudies() {
             </span>
           </h2>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-            Real results from real agencies and B2B Services companies.
+            
           </p>
         </div>
 
@@ -232,16 +255,17 @@ export default function CaseStudies() {
             }}
             loop={true}
             speed={700}
-            pagination={{ clickable: true, dynamicBullets: false }}
+            allowTouchMove={true}
+            pagination={showAll ? { clickable: true, dynamicBullets: false } : false}
             autoplay={{
-              delay: 4000,
+              delay: 2500,
               disableOnInteraction: false,
             }}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={handleSlideChange}
-            className="pb-20 case-studies-swiper"
+            className={`case-studies-swiper ${showAll ? 'pb-20' : 'pb-8'}`}
           >
-            {caseStudies.map((study, index) => (
+            {visibleStudies.map((study, index) => (
               <SwiperSlide key={index}>
                 <div className="bg-white/5 rounded-3xl overflow-hidden shadow-md border border-white/10 h-[680px] md:h-[720px] flex flex-col transition-all duration-500 hover:shadow-2xl hover:-translate-y-1">
                   {/* Header: Company + Niche with compact inline logo */}
@@ -307,6 +331,19 @@ export default function CaseStudies() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </div>
+
+        {/* Toggle More/Less */}
+        <div className="mt-6 text-center">
+          <button
+            onClick={toggleShowAll}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 text-white font-medium hover:brightness-110 transition-all duration-200 shadow-lg"
+          >
+            {showAll ? "View Fewer Case Studies" : "View More Case Studies"}
+          </button>
+          <div className="mt-2 text-xs text-gray-400">
+            Swipe the cards to explore more
+          </div>
         </div>
 
         {/* Modal */}
