@@ -1,4 +1,5 @@
 import React from 'react';
+import SLBadge from "../assets/SL+Partner+Badge.png";
 
 const OfficialPartner = () => {
   return (
@@ -11,9 +12,12 @@ const OfficialPartner = () => {
             </h2>
             <div className="flex items-center justify-center">
               <img
-                src="/src/assets/SL+Partner+Badge.png"
+                src={SLBadge}
                 alt="Smartlead Certified Partner Badge"
                 className="h-36 md:h-40 select-none pointer-events-none drop-shadow-[0_10px_25px_rgba(0,0,0,0.35)] animate-floatSoft"
+                loading="lazy"
+                decoding="async"
+                draggable="false"
               />
             </div>
           </div>
