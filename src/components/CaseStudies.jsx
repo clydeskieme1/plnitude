@@ -20,6 +20,7 @@ import Taylor_thumbnail from "../assets/Taylor_thumbnail.jpg";
 import Taylor from "../assets/Taylor.jpg";
 import Nickolas_thumbnail from "../assets/Nickolas_thumbnail.jpg";
 import Nickolas from "../assets/Nickolas.jpg";
+import FirstPageTestimonial from "../assets/Testimonial.jpg";
 import LogoArcady from "../assets/client logos/Arcady Media.jpg";
 import LogoFirstPage from "../assets/client logos/First Page Digital.jpg";
 import LogoFeature from "../assets/client logos/Feature Digital.png";
@@ -94,6 +95,7 @@ const caseStudies = [
     company: "First Page Digital",
     niche: "Digital Marketing Agency",
     logo: LogoFirstPage,
+    testimonial: FirstPageTestimonial,
   },
   {
     title: "Generated 23 Qualified Commercial Leads in 4 Weeks",
@@ -159,6 +161,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   const [selectedCase, setSelectedCase] = useState(null);
+  const [showTestimonial, setShowTestimonial] = useState(false);
   const swiperRef = useRef(null);
   const [isFading, setIsFading] = useState(false);
 
@@ -169,7 +172,16 @@ export default function CaseStudies() {
 
   const handleCloseModal = () => {
     setSelectedCase(null);
+    setShowTestimonial(false);
     swiperRef.current?.autoplay.start();
+  };
+
+  const handleOpenTestimonial = () => {
+    setShowTestimonial(true);
+  };
+
+  const handleCloseTestimonial = () => {
+    setShowTestimonial(false);
   };
 
   const handleSlideChange = () => {
@@ -340,6 +352,21 @@ export default function CaseStudies() {
                   {highlightLabels(selectedCase.result)}
                  </div>
 
+                {/* Testimonial Button - Only for First Page Digital */}
+                {selectedCase.testimonial && (
+                  <div className="mb-6">
+                    <button
+                      onClick={handleOpenTestimonial}
+                      className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 text-white font-medium hover:brightness-110 transition-all duration-200 shadow-lg"
+                    >
+                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                      </svg>
+                      View Client Testimonial
+                    </button>
+                  </div>
+                )}
+
                 {/* Video */}
                 <div className="aspect-video rounded-xl overflow-hidden border border-white/10">
                   <iframe
@@ -350,6 +377,44 @@ export default function CaseStudies() {
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Testimonial Modal */}
+        {showTestimonial && selectedCase?.testimonial && (
+          <div
+            className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] backdrop-blur-sm"
+            onClick={handleCloseTestimonial}
+            aria-modal="true"
+            role="dialog"
+          >
+            <div
+              className="p-[2px] rounded-2xl bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-500 animate-gradientFlow max-w-4xl w-full mx-4"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="bg-[#061022] rounded-2xl p-6 relative shadow-2xl animate-fadeIn">
+                <button
+                  className="absolute top-4 right-4 text-gray-400 hover:text-gray-100 text-2xl z-10"
+                  onClick={handleCloseTestimonial}
+                  aria-label="Close testimonial"
+                >
+                  ✕
+                </button>
+                
+                <div className="text-center mb-4">
+                  <h3 className="text-xl font-semibold text-white">Client Testimonial</h3>
+                  <p className="text-sky-400 text-sm">Real conversation with {selectedCase.client}</p>
+                </div>
+                
+                <div className="flex justify-center">
+                  <img
+                    src={selectedCase.testimonial}
+                    alt="Client testimonial conversation"
+                    className="max-w-full max-h-[70vh] object-contain rounded-lg shadow-lg"
+                  />
                 </div>
               </div>
             </div>
