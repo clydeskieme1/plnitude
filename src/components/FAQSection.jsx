@@ -21,7 +21,7 @@ export default function FAQSection() {
     {
       question: "Do you integrate with our CRM and calendar?",
       answer:
-        "Yes — we integrate with tools like HubSpot, Pipedrive, and Calendly/Google Calendar for routing, tracking, and rescheduling. Your pipeline stays organized.",
+        "Yes, we integrate with tools like HubSpot, Pipedrive, and Calendly/Google Calendar for routing, tracking, and rescheduling. Your pipeline stays organized.",
     },
     {
       question: "What do you need from us to succeed?",
