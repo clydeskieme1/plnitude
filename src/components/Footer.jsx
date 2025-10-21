@@ -21,6 +21,15 @@ export default function Footer() {
             <a href="#case-studies" className="text-gray-200 hover:text-sky-300 transition-colors">Case Studies</a>
             <a href="#about" className="text-gray-200 hover:text-sky-300 transition-colors">About</a>
             <a href="#faq" className="text-gray-200 hover:text-sky-300 transition-colors">FAQ</a>
+            <a
+              href="https://uk.linkedin.com/in/emmanuel-akatobi-334608247"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn profile"
+              className="px-3 py-1.5 rounded-md bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 text-white shadow hover:brightness-110 transition"
+            >
+              LinkedIn
+            </a>
           </nav>
         </div>
 

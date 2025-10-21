@@ -29,6 +29,35 @@ import LogoSCCleaning from "../assets/client logos/SC Cleaning.png";
 import LogoPropertyOne from "../assets/client logos/Property One.png";
 import LogoZerorez from "../assets/client logos/Zerorez.png";
 
+// Inline highlighter: bold only the specific words, preserve lines with <br />
+const highlightLabels = (text) => {
+  const BEFORE = "Before PLNITUDE:";
+  const WITH = "With PLNITUDE:";
+  const lines = text.split("\n");
+  const out = [];
+  lines.forEach((line, i) => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith(BEFORE)) {
+      const rest = trimmed.slice(BEFORE.length);
+      out.push(
+        <span key={`before-${i}`}>
+          <span className="font-bold text-base md:text-lg text-white">Before PLNITUDE</span>:{rest}
+        </span>
+      );
+    } else if (trimmed.startsWith(WITH)) {
+      const rest = trimmed.slice(WITH.length);
+      out.push(
+        <span key={`with-${i}`}>
+          <span className="font-bold text-base md:text-lg text-white">With PLNITUDE</span>:{rest}
+        </span>
+      );
+    } else {
+      out.push(<span key={`line-${i}`}>{line}</span>);
+    }
+    if (i < lines.length - 1) out.push(<br key={`br-${i}`} />);
+  });
+  return out;
+};
 const caseStudies = [
   {
     title: "$252,000 in Annual Revenue Added in 2 Months",
@@ -252,9 +281,7 @@ export default function CaseStudies() {
                       <p className="text-sky-400 font-medium mb-2 text-sm">
                         Client: {study.client}
                       </p>
-                      <p className="text-gray-300 text-sm leading-relaxed whitespace-pre-line">
-                        {study.result}
-                      </p>
+                     {highlightLabels(study.result)}
                     </div>
 
                     <button
@@ -309,7 +336,9 @@ export default function CaseStudies() {
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-300 mb-6">{selectedCase.result}</p>
+                <div className="text-gray-300 mb-6">
+                  {highlightLabels(selectedCase.result)}
+                 </div>
 
                 {/* Video */}
                 <div className="aspect-video rounded-xl overflow-hidden border border-white/10">

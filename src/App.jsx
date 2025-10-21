@@ -25,8 +25,8 @@ export default function App() {
         <OfficialPartner />
         <WhereAgenciesGetStuck />
         <WhyPlnitude />
-        <HowWeWork />
         <CaseStudies />
+        <HowWeWork />
         <AboutSection />
         <FAQSection />
         <CTABookCall />
