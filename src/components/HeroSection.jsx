@@ -38,7 +38,7 @@ export default function HeroSection() {
           <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
             Qualified Meetings
           </span>{" "}
-          very Month With Decision-Makers Who Want Your Services.
+          Every Month With Decision-Makers Who Want Your Services.
         </h1>
 
         {/* Subheading */}
