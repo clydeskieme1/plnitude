@@ -34,11 +34,11 @@ export default function HeroSection() {
 
         {/* Title */}
         <h1 className="font-display text-4xl md:text-5xl font-bold text-white leading-tight animate-fadeUp">
-          We’ll book you 10–15{" "}
+          We’ll Book You 10–15{" "}
           <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
-            qualified meetings
+            Qualified Meetings
           </span>{" "}
-          every month with decision-makers who want your services.
+          very Month With Decision-Makers Who Want Your Services.
         </h1>
 
         {/* Subheading */}
