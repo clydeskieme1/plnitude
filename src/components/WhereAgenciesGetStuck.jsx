@@ -28,7 +28,7 @@ export default function WhereAgenciesGetStuck() {
       <div className="max-w-6xl mx-auto px-6">
         {/* Header */}
         <h2 id="stuck-title" className="text-5xl font-bold text-white mb-4 tracking-tight text-center">
-          Where Most Agencies {" "}
+          Where Most B2B Service Companies {" "}
           <span className="bg-gradient-to-r from-sky-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent font-extrabold animate-gradientFlow drop-shadow-[0_1px_6px_rgba(0,0,0,0.45)]">
             Get Stuck
           </span>

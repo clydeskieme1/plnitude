@@ -40,11 +40,11 @@ export default function AboutSection() {
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg mb-6">
-            After nearly 3 years of working with agencies struggling to scale, I built PLNITUDE with the goal to make abundant growth predictable and risk-free for agencies.
+            After nearly 3 years of working with B2B service businesses struggling to scale, I built PLNITUDE with the goal to make abundant growth predictable and risk-free for B2B service businesses.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg mb-6">
-            We’ve had the privilege of helping dozens of agencies and B2B companies to fill their calendars with qualified, conversion-ready meetings, without retainers, long contracts or fluff.
+            We’ve had the privilege of helping dozens of B2B service businesses to fill their calendars with qualified, conversion-ready meetings, without retainers, long contracts or fluff.
           </p>
 
           <p className="text-gray-300 leading-relaxed text-lg italic">

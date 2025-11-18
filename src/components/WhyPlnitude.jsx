@@ -40,8 +40,8 @@ export default function WhyPlnitude() {
       desc: "Your prospects don't get spammed with generic templates. Every touchpoint provides genuine value first to build trust.",
     },
     {
-      title: "Trusted by Growth-Focused Agencies",
-      desc: "From industries ranging from SaaS to Commerce, we've helped marketing agencies book meetings with brands like Rolls-Royce and Vodafone.",
+      title: "Trusted by Arranged of B2B Service Industries",
+      desc: "From industries ranging from SaaS to Commerce, we've helped B2B service companies book meetings with brands like Rolls-Royce and Vodafone.",
     },
   ];
 

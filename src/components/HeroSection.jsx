@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="animate-fadeUp">
           <div className="relative inline-flex p-[4px] rounded-full bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 animate-gradientPulse animate-floatSoft">
             <div className="inline-flex items-center px-5 py-2 rounded-full bg-black/30 backdrop-blur-sm border border-white/10 text-sky-100 text-lg md:text-xl font-bold tracking-wide shadow-soft">
-              For Marketing Agencies
+              For Agencies and B2B Service Businesses
             </div>
           </div>
         </div>

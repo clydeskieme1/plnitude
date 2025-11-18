@@ -14,7 +14,6 @@ export default function HowWeWork() {
   const [activeStep, setActiveStep] = useState(0);
   const [prevStep, setPrevStep] = useState(null);
   const [iconVisible, setIconVisible] = useState(Array(6).fill(false));
-  const [isPaused, setIsPaused] = useState(false);
 
   // Scroll fade-up animation
   useEffect(() => {
@@ -89,20 +88,10 @@ export default function HowWeWork() {
     setActiveStep(nextStep);
   };
 
-  // Auto-step rotation (pause on manual interaction)
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setPrevStep(activeStep);
-      setActiveStep((prev) => (prev + 1) % steps.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, [activeStep, isPaused, steps.length]);
+  // Removed auto-step rotation; steps change only on user interaction
 
   const handleIconClick = (index) => {
-    setIsPaused(true);
     changeStep(index);
-    setTimeout(() => setIsPaused(false), 1000); // resume after 1s
   };
 
   return (
