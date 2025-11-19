@@ -60,6 +60,7 @@ const highlightLabels = (text) => {
   return out;
 };
 const caseStudies = [
+  // Agency
   {
     title: "$252,000 in Annual Revenue Added in 2 Months",
     client: "Ahmed Almnaseer, Head of Sales @ Arcady Media",
@@ -72,6 +73,20 @@ const caseStudies = [
     niche: "E-commerce Marketing Agency",
     logo: LogoArcady,
   },
+  // Cleaning
+  {
+    title: "Generated 23 Qualified Commercial Leads in 4 Weeks",
+    client: "Cole Winsness, Marketing Director @ Zerorez of Atlanta",
+    result:
+      "Before PLNITUDE: Reliant on spending money on Google and Facebook Ads To Bring Lead-Flow\nWith PLNITUDE: 23 Qualified Leads Generated In First Month On Performance Basis",
+    youtubeId: "AAilalB2iWI",
+    thumbnail: Cole_thumbnail,
+    clientImage: Cole,
+    company: "Zerorez of Atlanta",
+    niche: "Commercial Cleaning Company",
+    logo: LogoZerorez,
+  },
+  // Agency
   {
     title: "97 Qualified Meetings Booked In 2 Months",
     client: "Daniel Sherf, Co-Founder @ Feature Digital",
@@ -84,6 +99,20 @@ const caseStudies = [
     niche: "Digital Marketing Agency",
     logo: LogoFeature,
   },
+  // Cleaning
+  {
+    title: "$120,000 added in 6 Months",
+    client: "Taylor Juchs, Operations Manager @ Impeccably Clean LLC",
+    result:
+      "Before PLNITUDE: Struggled to get deal flow, relying on word-of-mouth and Google Ads\nWith PLNITUDE: $120,000 added in 6 months from leads and meetings we generated for them",
+    youtubeId: "p2cEKQRt0YA",
+    thumbnail: Taylor_thumbnail,
+    clientImage: Taylor,
+    company: "Impeccably Clean LLC",
+    niche: "Family-Owned Commercial Cleaning Business",
+    logo: LogoImpeccably,
+  },
+  // Agency
   {
     title: "$300,000 12-Month Revenue Added in 2 Months",
     client: "Eugen Kim, Head of Strategy @ First Page Digital",
@@ -97,30 +126,7 @@ const caseStudies = [
     logo: LogoFirstPage,
     testimonial: FirstPageTestimonial,
   },
-  {
-    title: "Generated 23 Qualified Commercial Leads in 4 Weeks",
-    client: "Cole Winsness, Marketing Director @ Zerorez of Atlanta",
-    result:
-      "Before PLNITUDE: Reliant on spending money on Google and Facebook Ads To Bring Lead-Flow\nWith PLNITUDE: 23 Qualified Leads Generated In First Month On Performance Basis",
-    youtubeId: "AAilalB2iWI",
-    thumbnail: Cole_thumbnail,
-    clientImage: Cole,
-    company: "Zerorez of Atlanta",
-    niche: "Commercial Cleaning Company",
-    logo: LogoZerorez,
-  },
-  {
-    title: "$120,000 added in 6 Months",
-    client: "Taylor Juchs, Operations Manager @ Impeccably Clean LLC",
-    result:
-      "Before PLNITUDE: Struggled to get deal flow, relying on word-of-mouth and Google Ads\nWith PLNITUDE: $120,000 added in 6 months from leads and meetings we generated for them",
-    youtubeId: "p2cEKQRt0YA",
-    thumbnail: Taylor_thumbnail,
-    clientImage: Taylor,
-    company: "Impeccably Clean LLC",
-    niche: "Family-Owned Commercial Cleaning Business",
-    logo: LogoImpeccably,
-  },
+  // Cleaning
   {
     title: "4 Recurring Commercial Clients Signed in 7 Weeks",
     client: "Nickolas Soares, Operations Manager @ SC Cleaning Service, LLC",
@@ -133,18 +139,7 @@ const caseStudies = [
     niche: "Family-Owned Commercial Cleaning Business",
     logo: LogoSCCleaning,
   },
-  {
-    title: "From 2 Qualified Leads A Month, To 33 Generated in 1 Month",
-    client: "Arnav Sharma, Head of Business Development @ Property One Limited",
-    result:
-      "Before PLNITUDE: Struggled to generate real traction from their outreach, resulting in 2 leads a month\nWith PLNITUDE: 33 Qualified Leads Generated In First Month of Working Together",
-    youtubeId: "OiC9wdyogwY",
-    thumbnail: Arnav_thumbnail,
-    clientImage: Arnav,
-    company: "Property One",
-    niche: "Family-Owned Building Services company",
-    logo: LogoPropertyOne,
-  },
+  // Agency
   {
     title: "From 0 Calls From Outbound To Booking 45 Qualified Meetings In 4 Months",
     client: "Alexey Borisov, Co-Founder @ Rocketech",
@@ -156,6 +151,19 @@ const caseStudies = [
     company: "Rocketech",
     niche: "Software Development Agency",
     logo: LogoRocketech,
+  },
+  // Cleaning / Building Services
+  {
+    title: "From 2 Qualified Leads A Month, To 33 Generated in 1 Month",
+    client: "Arnav Sharma, Head of Business Development @ Property One Limited",
+    result:
+      "Before PLNITUDE: Struggled to generate real traction from their outreach, resulting in 2 leads a month\nWith PLNITUDE: 33 Qualified Leads Generated In First Month of Working Together",
+    youtubeId: "OiC9wdyogwY",
+    thumbnail: Arnav_thumbnail,
+    clientImage: Arnav,
+    company: "Property One",
+    niche: "Family-Owned Building Services company",
+    logo: LogoPropertyOne,
   },
 ];
 

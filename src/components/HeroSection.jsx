@@ -72,7 +72,9 @@ export default function HeroSection() {
         {/* CTA Button */}
         <div className="animate-fadeUp delay-300">
           <a
-            href="#book-call"
+            href="https://calendly.com/plnitude/discovery-call-plnitude"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-block text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-2xl hover:scale-[1.03] animate-gradientFlow"
           >
             <span className="relative z-10">Book a Free Strategy Call</span>

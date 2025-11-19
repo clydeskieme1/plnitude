@@ -159,6 +159,19 @@ export default function HowWeWork() {
 
         {/* Decorative Bar */}
         <div className="mt-16 h-[4px] w-40 mx-auto bg-gradient-to-r from-sky-400 to-cyan-400 rounded-full"></div>
+
+        {/* CTA: Book a Call */}
+        <div className="mt-10 text-center">
+          <a
+            href="https://calendly.com/plnitude/discovery-call-plnitude"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative inline-block text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-2xl hover:scale-[1.03] animate-gradientFlow"
+          >
+            <span className="relative z-10">Book a Call</span>
+            <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></span>
+          </a>
+        </div>
       </div>
     </section>
   );

@@ -40,7 +40,7 @@ export default function WhyPlnitude() {
       desc: "Your prospects don't get spammed with generic templates. Every touchpoint provides genuine value first to build trust.",
     },
     {
-      title: "Trusted by Arranged of B2B Service Industries",
+      title: "Trusted by A Range of B2B Service Industries",
       desc: "From industries ranging from SaaS to Commerce, we've helped B2B service companies book meetings with brands like Rolls-Royce and Vodafone.",
     },
   ];
@@ -74,6 +74,19 @@ export default function WhyPlnitude() {
             <p className="text-gray-300 text-base leading-relaxed">{item.desc}</p>
           </div>
         ))}
+      </div>
+
+      {/* CTA: Book a Call */}
+      <div className="mt-10 text-center">
+        <a
+          href="https://calendly.com/plnitude/discovery-call-plnitude"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative inline-block text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-2xl hover:scale-[1.03] animate-gradientFlow"
+        >
+          <span className="relative z-10">Book a Call</span>
+          <span className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></span>
+        </a>
       </div>
     </section>
   );

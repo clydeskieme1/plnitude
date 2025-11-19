@@ -51,7 +51,9 @@ export default function Navbar() {
 
           {/* CTA BUTTON */}
           <a
-            href="#book-call"
+            href="https://calendly.com/plnitude/discovery-call-plnitude"
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative inline-block text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 shadow-md bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-lg hover:scale-[1.03] animate-gradientFlow"
           >
             <span className="relative z-10">Book a Call</span>
@@ -84,7 +86,7 @@ export default function Navbar() {
             <a href="#case-studies" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-sky-300">Case Studies</a>
             <a href="#about" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-sky-300">About</a>
             <a href="#faq" onClick={() => setIsOpen(false)} className="text-gray-300 hover:text-sky-300">FAQ</a>
-            <a href="#book-call" onClick={() => setIsOpen(false)} className="mt-2 inline-block text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 shadow-md bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-lg hover:scale-[1.03] animate-gradientFlow">Book a Call</a>
+            <a href="https://calendly.com/plnitude/discovery-call-plnitude" target="_blank" rel="noopener noreferrer" onClick={() => setIsOpen(false)} className="mt-2 inline-block text-white font-semibold py-2 px-5 rounded-lg transition-all duration-300 shadow-md bg-gradient-to-r from-sky-500 via-teal-400 to-cyan-400 hover:shadow-lg hover:scale-[1.03] animate-gradientFlow">Book a Call</a>
           </nav>
         </div>
       )}
