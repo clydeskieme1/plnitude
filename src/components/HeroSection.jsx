@@ -2,14 +2,13 @@ import React, { useEffect } from "react";
 
 export default function HeroSection() {
   useEffect(() => {
-    // ✅ Load Wistia player scripts dynamically
     const script1 = document.createElement("script");
     script1.src = "https://fast.wistia.com/player.js";
     script1.async = true;
     document.body.appendChild(script1);
 
     const script2 = document.createElement("script");
-    script2.src = "https://fast.wistia.com/embed/etz0seiito.js";
+    script2.src = "https://fast.wistia.com/embed/lmvpvwu685.js";
     script2.type = "module";
     script2.async = true;
     document.body.appendChild(script2);
@@ -53,8 +52,8 @@ export default function HeroSection() {
               {/* Wistia Embed */}
               <style>
                 {`
-                  wistia-player[media-id='etz0seiito']:not(:defined) {
-                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/etz0seiito/swatch');
+                  wistia-player[media-id='lmvpvwu685']:not(:defined) {
+                    background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/lmvpvwu685/swatch');
                     display: block;
                     filter: blur(5px);
                     padding-top: 56.25%;
@@ -62,7 +61,7 @@ export default function HeroSection() {
                 `}
               </style>
               <wistia-player
-                media-id="etz0seiito"
+                media-id="lmvpvwu685"
                 aspect="1.7777777777777777"
               ></wistia-player>
             </div>
