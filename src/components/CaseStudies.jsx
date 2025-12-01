@@ -84,7 +84,7 @@ const caseStudies = [
     thumbnail: Arnav_thumbnail,
     clientImage: Arnav,
     company: "ServiceMaster Clean Glasgow",
-    niche: "Family-Owned Building Services company",
+    niche: "Commercial Cleaning Franchise",
     logo: LogoServiceMaster,
   },
   // Agency
