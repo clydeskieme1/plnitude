@@ -29,6 +29,8 @@ import LogoImpeccably from "../assets/client logos/Impeccably Clean LLC.png";
 import LogoSCCleaning from "../assets/client logos/SC Cleaning.png";
 import LogoPropertyOne from "../assets/client logos/Property One.png";
 import LogoZerorez from "../assets/client logos/Zerorez.png";
+import LogoServiceMaster from "../assets/client logos/Service_logo.png";
+
 
 // Inline highlighter: bold only the specific words, preserve lines with <br />
 const highlightLabels = (text) => {
@@ -73,18 +75,17 @@ const caseStudies = [
     niche: "E-commerce Marketing Agency",
     logo: LogoArcady,
   },
-  // Cleaning
   {
-    title: "Generated 23 Qualified Commercial Leads in 4 Weeks",
-    client: "Cole Winsness, Marketing Director @ Zerorez of Atlanta",
+    title: "From 2 Qualified Leads A Month, To 33 Generated in 1 Month",
+    client: "Arnav Sharma, Head of Business Development @ ServiceMaster Clean Glasgow",
     result:
-      "Before PLNITUDE: Reliant on spending money on Google and Facebook Ads To Bring Lead-Flow\nWith PLNITUDE: 23 Qualified Leads Generated In First Month On Performance Basis",
-    youtubeId: "AAilalB2iWI",
-    thumbnail: Cole_thumbnail,
-    clientImage: Cole,
-    company: "Zerorez of Atlanta",
-    niche: "Commercial Cleaning Company",
-    logo: LogoZerorez,
+      "Before PLNITUDE: Struggled to generate real traction from their outreach, resulting in 2 leads a month\nWith PLNITUDE: 33 Qualified Leads Generated In First Month of Working Together",
+    youtubeId: "OiC9wdyogwY",
+    thumbnail: Arnav_thumbnail,
+    clientImage: Arnav,
+    company: "ServiceMaster Clean Glasgow",
+    niche: "Family-Owned Building Services company",
+    logo: LogoServiceMaster,
   },
   // Agency
   {
@@ -152,18 +153,17 @@ const caseStudies = [
     niche: "Software Development Agency",
     logo: LogoRocketech,
   },
-  // Cleaning / Building Services
   {
-    title: "From 2 Qualified Leads A Month, To 33 Generated in 1 Month",
-    client: "Arnav Sharma, Head of Business Development @ Property One Limited",
+    title: "Generated 23 Qualified Commercial Leads in 4 Weeks",
+    client: "Cole Winsness, Marketing Director @ Zerorez of Atlanta",
     result:
-      "Before PLNITUDE: Struggled to generate real traction from their outreach, resulting in 2 leads a month\nWith PLNITUDE: 33 Qualified Leads Generated In First Month of Working Together",
-    youtubeId: "OiC9wdyogwY",
-    thumbnail: Arnav_thumbnail,
-    clientImage: Arnav,
-    company: "Property One",
-    niche: "Family-Owned Building Services company",
-    logo: LogoPropertyOne,
+      "Before PLNITUDE: Reliant on spending money on Google and Facebook Ads To Bring Lead-Flow\nWith PLNITUDE: 23 Qualified Leads Generated In First Month On Performance Basis",
+    youtubeId: "AAilalB2iWI",
+    thumbnail: Cole_thumbnail,
+    clientImage: Cole,
+    company: "Zerorez of Atlanta",
+    niche: "Commercial Cleaning Company",
+    logo: LogoZerorez,
   },
 ];
 
@@ -264,7 +264,7 @@ export default function CaseStudies() {
                         <img
                           src={study.logo}
                           alt={`${study.company} logo`}
-                          className={`${[LogoImpeccably, LogoRocketech, LogoSCCleaning, LogoZerorez].includes(study.logo) ? "h-16 w-16 md:h-20 md:w-20" : "h-10 w-10 md:h-12 md:w-12"} object-contain rounded-sm flex-shrink-0`}
+                          className={`${study.logo === LogoServiceMaster ? "h-20 w-20 md:h-24 md:w-24" : [LogoImpeccably, LogoRocketech, LogoSCCleaning, LogoZerorez].includes(study.logo) ? "h-16 w-16 md:h-20 md:w-20" : "h-10 w-10 md:h-12 md:w-12"} object-contain rounded-sm flex-shrink-0`}
                           loading="lazy"
                           decoding="async"
                         />
